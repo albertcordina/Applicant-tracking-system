@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//www.thymeleaf.org"  xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Page</title>
+  <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" /> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin-top: 50px;
+            background-color: green;
+            text-align: center;
+            color: white;
+        }
+        .white {color: white}
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: white;
+            font-weight: bold; /* To make the line bold */
+        }
+        /* To set the BUTTONS */
+        input[type="submit"],
+        input[type="button"] {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 3px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: darkgreen;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+<h2>Account</h2>
+<hr>
+
+
+<!-- Coding according to the Role -->
+<div sec:authorize="hasRole('APPLICANT')">
+
+    <header style="margin-right: 120px; margin-left: 120px;">
+        <nav>
+            <a href="/applicant" class="white" style="margin-right: 50px">Information</a>   |
+            <a href="/getAccountDetails" class="white" style="margin-right: 50px; margin-left: 50px">Manage your account</a>   |
+            <a href="/news" class="white" style="margin-left: 50px">News</a> <!-- the News for all registered applicants and admins -->
+        </nav>
+        <hr>
+    </header>
+
+</div>
+
+<!-- Coding according to the Role -->
+<div sec:authorize="hasRole('ADMIN')">
+
+    <header style="margin-right: 120px; margin-left: 120px;">
+        <nav>
+            <a href="/admin" class="white" style="margin-right: 50px">Admin Page</a> |
+            <a href="/manageApplicants" class="white" style="margin-right: 50px; margin-left: 50px">Manage the Applicants</a> |
+            <a href="/news" class="white" style="margin-left: 50px">News</a> <!-- the News for all registered applicants and admins -->
+        </nav>
+        <hr>
+    </header>
+
+</div>
+
+
+<p>Hi, <span th:text="${name}"></span> ! Welcome to your account</p>
+<br>
+
+<br><br>
+
+<!-- Submit to log out -->
+<form action="#" th:action="@{/logout}" method="POST" >
+    <input type="submit"  value="Logout"/>
+</form>
+
+</div>
+</body>
+</html>

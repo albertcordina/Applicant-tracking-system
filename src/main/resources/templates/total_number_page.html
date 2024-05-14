@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Number of the Applicants</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 50px;
+            text-align: center;
+            background-color: green;
+            color: white;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: darkgray;
+            font-weight: bold; /* To make the line bold */
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h3>Total Number of the Applicants</h3>
+    <hr>
+    <br>
+
+    <h5>Total number of the Applicants: <span th:text="${totalNumberOfApplicants}"></span></h5>
+    <br>
+
+    <p class="center">
+        <a href="/manageApplicants" class="btn btn-secondary">Return back to the Applicant's List page</a>
+    </p>
+
+</div>
+</body>
+</html>

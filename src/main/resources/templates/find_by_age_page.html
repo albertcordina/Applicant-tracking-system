@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Applicant by Age</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 50px 800px;
+            text-align: center;
+            background-color: green;
+            color: white;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: darkgray;
+            font-weight: bold; /* To make the line bold */
+        }
+
+        /* To set the BUTTONS */
+        button[type="submit"],
+        input[type="button"] {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 3px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        button[type="submit"]:hover,
+        input[type="button"]:hover{
+            background-color: darkgreen;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3>Find Applicants by Age</h3>
+    <hr>
+
+    <form action="/applicantsByAge" method="GET">
+
+        <div class="form-group">
+            <label for="age">Enter the age here:</label>
+            <input type="number" min="18" class="form-control" id="age" name="age" required>
+        </div>
+
+        <button type="submit">Find Applicant</button>
+
+    </form>
+    <br><br>
+
+    <input type="button" onclick="location.href='/manageApplicants'" value="Back to the Applicant's list">
+
+</div>
+</body>
+</html>

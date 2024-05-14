@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 50px;
+            background-color: green;
+            text-align: center;
+            color: white;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: lightgray;
+            font-weight: bold; /* To make the line bold */
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+        legend {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h2 class="text-center">Update your personal Information</h2>
+<hr>
+
+<form action="/updateApplicant" method="GET">
+
+    <!-- the 'hidden' attributes are not amendable by the applicant, but they should be here
+                       in the code for saving the other attributes in the database) -->
+    <input type="hidden" name="username" th:value="${applicants.username}">
+    <input type="hidden" name="password" th:value="${applicants.password}">
+    <input type="hidden" name="age" th:value="${applicants.age}">
+    <input type="hidden" name="status" th:value="${applicants.status}">
+
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" th:value="${applicants.name}">
+    </div>
+
+    <div class="form-group">
+        <label for="surname">Surname:</label>
+        <input type="text" class="form-control" id="surname" name="surname" th:value="${applicants.surname}">
+    </div>
+
+    <div class="form-group">
+        <label for="income">Income:</label>
+        <input type="number" class="form-control" id="income" name="income" th:value="${applicants.income}">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" th:value="${applicants.email}">
+    </div>
+
+    <div class="form-group">
+        <legend>Occupational status</legend>
+        <label><input type="radio" name="occupation" value="student" th:field="*{applicants.occupation}"> Student</label>
+        <label><input type="radio" name="occupation" value="employed" th:field="*{applicants.occupation}"> Employed</label>
+        <label><input type="radio" name="occupation" value="unemployed" th:field="*{applicants.occupation}"> Unemployed</label>
+        <label><input type="radio" name="occupation" value="retired" th:field="*{applicants.occupation}"> Retired</label>
+    </div>
+     <br>
+
+    <div class="form-group">
+        <label for="comments">Leave you comments for our review:</label>
+        <textarea class="form-control" id="comments" name="comments">Write here</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+    <br>
+
+<div class="text-center mt-3">
+    <a href="/manageAccount" class="btn btn-secondary">Back to Manage Account page</a>
+</div>
+</div>
+</body>
+</html>

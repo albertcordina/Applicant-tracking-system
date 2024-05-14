@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            text-align: center;
+            background-color: green;
+            color: white;
+            margin-bottom: 50px;
+        }
+        .error { color: red; }
+        hr {
+            border: 0;
+            height: 1px;
+            font-weight: bold; /* To make the line bold */
+            background-color: white;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* To set the INPUT boxes*/
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        textarea,
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        /* To set the BUTTONS */
+        button[type="submit"],
+        input[type="button"] {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        button[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: darkgreen;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="container">
+    <br>
+    <h3>Please fill out the registration form</h3>
+
+    <form action="#" th:action="@{/submitData}" method="POST" th:object="${applicants}">
+        <hr>
+        <h5>Your personal information</h5>
+
+        <!-- The collection of the PERSONAL info of the applicant -->
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" th:field="*{name}" />
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="surname">Your Surname:</label>
+            <input type="text" id="surname" name="surname" th:field="*{surname}" />
+            <span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Occupational status:</label>
+            <div>
+                <label><input type="radio" name="occupation" value="student" th:field="*{occupation}"> Student</label>
+                <label><input type="radio" name="occupation" value="employed" th:field="*{occupation}"> Employed</label>
+                <label><input type="radio" name="occupation" value="unemployed" th:field="*{occupation}"> Unemployed</label>
+                <label><input type="radio" name="occupation" value="retired" th:field="*{occupation}"> Retired</label>
+            </div>
+            <span th:if="${#fields.hasErrors('occupation')}" th:errors="*{occupation}" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="income">Your Monthly Income:</label>
+            <input type="number" id="income" name="income" min="1" max="2000" th:field="*{income}" />
+            <span th:if="${#fields.hasErrors('income')}" th:errors="*{income}" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Your Age:</label>
+            <input type="number" id="age" name="age" min="18" th:field="*{age}" />
+            <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" th:field="*{email}" />
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></span>
+        </div>
+
+        <hr>
+        <!-- The collection of the SECURITY info of the applicant -->
+        <h5>Your security information</h5>
+        <div class="form-group">
+            <label for="username">Your username:</label>
+            <input type="text" id="username" name="username" th:field="*{username}" />
+            <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Your password:</label>
+            <input type="password" id="password" name="password" th:field="*{password}" />
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error"></span>
+        </div>
+
+        <!-- Collection of some comments from the applicant -->
+        <hr>
+        <h5>Your comments</h5>
+        <div class="form-group">
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" th:field="*{comments}"></textarea>
+            <span th:if="${#fields.hasErrors('comments')}" th:errors="*{comments}" class="error"></span>
+        </div>
+
+        <button type="submit">Submit</button>
+        <br><br>
+        <input type="button" onclick="location.href='/'" value="Back to the Home Page">
+    </form>
+
+</div>
+</body>
+</html>

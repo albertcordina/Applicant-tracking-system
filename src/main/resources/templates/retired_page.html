@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retired</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+            background-color: green;
+            color: white;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: lightgray;
+            font-weight: bold; /* To make the line bold */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to the Government support program!</h1>
+    <hr>
+
+    <p>Hi, <span th:text="${applicants.name}"></span> Thank you for your registration with us!</p>
+
+    <p>You are <span th:text="${applicants.age}"></span> years old and the registered occupation as <span th:text="${applicants.occupation}"></span>.</p>
+    <p> Therefore, we recommend you also to contact the Social Security service regarding your entitlement for the pension.</p>
+
+    <p><a href="/account" class="btn btn-primary">Your account page</a></p>
+</div>
+</body>
+</html>

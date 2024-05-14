@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Applicant's Page</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 50px;
+            text-align: center;
+            background-color: green;
+            color: white;
+        }
+        .center{text-align: center;}
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: lightgray;
+            font-weight: bold; /* To make the line bold */
+        }
+        /* To set the BUTTON */
+        input[type="button"] {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 3px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        input[type="button"]:hover {
+            background-color: darkgreen;
+            color: white;
+        }
+    </style>
+
+
+</head>
+
+<body class="center">
+
+<div class="container">
+
+    <h3>Applicant's Information</h3>
+    <hr>
+
+    <p>Applicant's details...</p>
+    <br>
+
+    <input type="button" onclick="location.href='/account'" value="Back to your account">
+
+</div>
+</body>

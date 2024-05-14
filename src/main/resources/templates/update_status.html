@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 50px;
+            text-align: center;
+            background-color: green;
+            color: white;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: lightgray;
+            font-weight: bold; /* To make the line bold */
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+        legend {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h2 class="text-center">Status of the Application</h2>
+    <hr>
+
+    <form action="/updateStatus" method="GET">
+
+        <!-- the 'hidden' attributes are not amendable by the applicant, but they should be here
+                           in the code for saving the other attributes in the database) -->
+        <input type="hidden" name="username" th:value="${applicants.username}">
+        <input type="hidden" name="password" th:value="${applicants.password}">
+
+        <input type="hidden" name="name" th:value="${applicants.name}">
+        <input type="hidden" name="surname" th:value="${applicants.surname}">
+        <input type="hidden" name="age" th:value="${applicants.age}">
+        <input type="hidden" name="occupation" th:value="${applicants.occupation}">
+        <input type="hidden" name="income" th:value="${applicants.income}">
+        <input type="hidden" name="comments" th:value="${applicants.comments}">
+
+        <div class="form-group">
+            <label for="status">Write Here</label>
+            <textarea class="form-control" id="status" name="status">The status of the application: </textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save to Update</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <a href="/manageApplicants" class="btn btn-secondary">Back to the Applicant's list</a>
+    </div>
+</div>
+</body>
+</html>

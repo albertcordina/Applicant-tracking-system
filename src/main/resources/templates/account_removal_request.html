@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Removal Request</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 50px;
+            text-align: center;
+            background-color: green;
+            color: white;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: lightgray;
+            font-weight: bold; /* To make the line bold */
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+        legend {
+            margin-right: 20px;
+        }
+        /* To set the BUTTON */
+        input[type="button"] {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 3px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        input[type="button"]:hover {
+            background-color: darkgreen;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h3>If you would like to remove your account</h3>
+    <hr>
+
+    <form action="/removeAccountRequestSend" method="GET">
+
+        <!-- the 'hidden' attributes are not amendable by the applicant, but they should be here
+                           in the code for saving the other attributes in the database) -->
+        <input type="hidden" name="username" th:value="${applicants.username}">
+        <input type="hidden" name="password" th:value="${applicants.password}">
+
+        <input type="hidden" name="name" th:value="${applicants.name}">
+        <input type="hidden" name="surname" th:value="${applicants.surname}">
+        <input type="hidden" name="age" th:value="${applicants.age}">
+        <input type="hidden" name="email" th:value="${applicants.email}">
+        <input type="hidden" name="income" th:value="${applicants.income}">
+        <input type="hidden" name="comments" th:value="${applicants.comments}">
+        <input type="hidden" name="status" th:value="${applicants.status}">
+
+        <div class="form-group">
+            <legend>Removal account request to our admin</legend>
+            <label><input type="checkbox" name="deletion" value="true" th:checked="${applicants.deletion}">Click here</label>
+        </div>
+        <br>
+
+        <button type="submit" class="btn btn-primary">Send the Request</button>
+    </form>
+    <br>
+
+    <input type="button" onclick="location.href='/account'" value="Back to your account">
+
+</div>
+
+</body>
+</html>

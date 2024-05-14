@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage account of the Applicant</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Pico CSS framework
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" /> -->
+
+    <style>
+        body {
+            margin: 50px;
+            background-color: green;
+            text-align: center;
+            color: white;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: lightgray;
+            font-weight: bold; /* To make the line bold */
+        }
+        /* To set the BUTTON */
+        input[type="button"] {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 3px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        input[type="button"]:hover {
+            background-color: darkgreen;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3>Manage account</h3>
+    <hr>
+    <br>
+
+    <table class="table table-dark table-bordered table-hover" >
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Age</th>
+            <th>Occupation</th>
+            <th>Income</th>
+            <th>Email</th>
+            <th>Comments</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <!-- Iterate over applicants and display them in rows -->
+        <th:block action="/manageApplicant" method="GET">
+
+            <tr>
+                <td th:text="${username}"></td>
+                <td th:text="${name}"></td>
+                <td th:text="${surname}"></td>
+                <td th:text="${age}"></td>
+                <td th:text="${occupation}"></td>
+                <td th:text="${income}"></td>
+                <td th:text="${email}"></td>
+                <td th:text="${comments}"></td>
+                <td th:text="${status}"></td>
+                <td>
+                    <!-- Update form -->
+                             <form th:action="@{/updateApplicantGetPage}" method="GET" style="display: inline;">
+                                 <input type="hidden" name="username" th:value="${username}">
+                                 <button type="submit" class="btn btn-primary">Update your Account</button>
+                             </form>
+                </td>
+            </tr>
+
+        </th:block>
+        </tbody>
+    </table>
+
+    <!-- Send the deletion of the account request -->
+    <form th:action="@{/removeAccountRequestPage}" method="GET" style="display: inline;">
+        <input type="hidden" name="username" th:value="${username}">
+        <button type="submit" class="btn btn-secondary">Press here if you would like to remove your account</button>
+    </form>
+    <br><br>
+
+    <input type="button" onclick="location.href='/account'" value="Back to your account">
+
+</div>
+</body>
+</html>

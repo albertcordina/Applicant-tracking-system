@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Applicant by Occupation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 50px 700px;
+            background-color: green;
+            color: white;
+
+        }
+        .center {text-align: center;}
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: darkgray;
+            font-weight: bold; /* To make the line bold */
+        }
+        /* To set the BUTTONS */
+        button[type="submit"],
+        input[type="button"] {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 3px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        button[type="submit"]:hover,
+        input[type="button"]:hover{
+            background-color: darkgreen;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="center">Find Applicants by Occupation</h2>
+
+    <hr>
+    <form action = "findByOccupationResult" method="GET">
+
+        <div class="form-group">
+            <label>Select the Occupation:</label><br>
+            <input type="radio" id="student" name="occupation" value="student" required>
+            <label for="student">Student</label><br>
+            <input type="radio" id="employed" name="occupation" value="employed" required>
+            <label for="employed">Employed</label><br>
+            <input type="radio" id="unemployed" name="occupation" value="unemployed" required>
+            <label for="unemployed">Unemployed</label><br>
+            <input type="radio" id="retired" name="occupation" value="retired" required>
+            <label for="retired">Retired</label><br>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Find Applicant</button>
+
+    </form>
+
+    <br>
+<div class="center">
+    <input type="button" onclick="location.href='/manageApplicants'" value="Back to the Applicant's list">
+</div>
+
+</div>
+</body>
+</html>
+

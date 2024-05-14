@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Applicant's Details</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 50px 300px;
+            text-align: center;
+            background-color: green;
+            color: white;
+        }
+        .white{color: white;}
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: darkgray;
+            font-weight: bold; /* To make the line bold */
+        }
+    </style>
+</head>
+<body>
+<h2>List of the Applicants as </h2>
+<h2 th:each="applicant : ${applicants}">
+  <span th:text="${applicant.occupation}"></span>
+</h2>
+
+<br>
+<div class="container">
+
+
+    <!--  <p>
+          <a href="/totalNumber" class="btn btn-primary">Total Number of the Users</a>
+          <a href="/totalIncome" class="btn btn-primary">Total Income of the Users</a>
+      </p>  -->
+
+    <div>
+        <table class="table table-dark table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Income</th>
+                <th>Email</th>
+                <th>Comments</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Iterate over applicants and display them in rows -->
+            <th:block th:each="applicant : ${applicants}">
+                <tr>
+                    <td th:text="${applicant.username}" class="white" ></td>
+                    <td th:text="${applicant.name}" class="white"></td>
+                    <td th:text="${applicant.surname}" class="white"></td>
+                    <td th:text="${applicant.age}" class="white"></td>
+                    <td th:text="${applicant.occupation}" class="white"></td>
+                    <td th:text="${applicant.income}" class="white"></td>
+                    <td th:text="${applicant.email}" class="white"></td>
+                    <td th:text="${applicant.comments}" class="white"></td>
+                    <td th:text="${applicant.status}" class="white"></td>
+                    <td>
+                        <!-- Update form -->
+                        <form th:action="@{/updateStatusGetPage}" method="GET" style="display: inline-block; margin: 5px;">
+                            <input type="hidden" name="username" th:value="${applicant.username}">
+                            <button type="submit" class="btn btn-primary">Update Status</button>
+                        </form>
+                        <!-- Delete form -->
+                        <form th:action="@{/deleteApplicant}" method="POST" style="display: inline-block; margin: 5px;">
+                            <input type="hidden" name="username" th:value="${applicant.username}">
+                            <button type="submit" class="btn btn-danger">Delete Account</button>
+                        </form>
+                    </td>
+                </tr>
+
+            </th:block>
+        </table>
+    </div>
+    <br>
+    <p class="center">
+        <a href="/manageApplicants" class="btn btn-secondary">Back to the Applicant's List</a>
+    </p>
+</div>
+</body>
+</html>
