@@ -7,7 +7,10 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+/*
+    By eliminating boilerplate code, Spring Boot Lombok enhances
+      productivity, readability, and maintainability of projects.
+ */
 @Entity
 @Data
 @NoArgsConstructor

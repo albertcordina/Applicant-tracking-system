@@ -29,11 +29,15 @@
 <div class="container, white">
     <h3>Applicants List & Operations</h3>
     <hr>
-    <h5>Adding Request</h5>
+    <h5>Manage Applicants</h5>
 
     <p>
         <a href="/form" class="btn btn-primary">Add new Applicant</a>
+    <form th:action="@{/export}" method="post">
+        <button type="submit" class="brn btn-primary">Export the Applicants to CSV file</button>
+    </form>
     </p>
+
     <h5>Finding Requests</h5>
 
     <p>

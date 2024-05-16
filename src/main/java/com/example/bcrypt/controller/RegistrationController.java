@@ -73,6 +73,6 @@ public class RegistrationController {
 
     @GetMapping("/confirmation")
     public String confirmationPage() {
-        return "review-conf";
+        return "registration_confirmation";
     }
 }

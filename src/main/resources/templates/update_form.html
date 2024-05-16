@@ -22,14 +22,31 @@
             margin: auto;
         }
         legend {
-            margin-right: 20px;
-        }
+            margin-right: 20px;}
+            /* To set the BUTTONS */
+
+            button[type="submit"],
+            input[type="button"] {
+                background-color: white;
+                border: 1px solid darkgreen;
+                color: darkgreen;
+                padding: 3px 10px;
+                border-radius: 3px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+            button[type="submit"]:hover,
+            input[type="button"]:hover {
+                background-color: darkgreen;
+                color: white;
+            }
     </style>
 </head>
 <body>
 <div class="container">
 
-<h2 class="text-center">Update your personal Information</h2>
+<h2>Update your personal Information</h2>
 <hr>
 
 <form action="/updateApplicant" method="GET">
@@ -75,13 +92,13 @@
         <textarea class="form-control" id="comments" name="comments">Write here</textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="submit">Update</button>
 </form>
     <br>
+    <input type="button" onclick="location.href='/getAccountDetails'" value="Back to manage account">
 
-<div class="text-center mt-3">
-    <a href="/manageAccount" class="btn btn-secondary">Back to Manage Account page</a>
-</div>
+    <input type="button" onclick="location.href='/account'" value="Back to your account">
+
 </div>
 </body>
 </html>

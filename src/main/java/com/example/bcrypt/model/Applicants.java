@@ -6,7 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
+/*
+    By eliminating boilerplate code, Spring Boot Lombok enhances
+      productivity, readability, and maintainability of projects.
+ */
 @Entity
 @Data
 @NoArgsConstructor
@@ -21,10 +24,10 @@ public class Applicants {
     @NotBlank(message = "is required")
     private String password;
 
+
     @NotBlank(message = "is required")
     @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters")
     private String name;
-
 
     @NotBlank(message = "is required")
     @Size(min = 2, max = 50, message = "Surname must be between 2 and 50 characters")
@@ -34,6 +37,7 @@ public class Applicants {
     @Positive(message = "Number must be positive")
     @Min(value = 18, message = "Your age must be at least 18")
     private int age;
+
 
     @NotBlank(message = "is required")
     private String occupation;
