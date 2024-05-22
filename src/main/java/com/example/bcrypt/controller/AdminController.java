@@ -51,14 +51,14 @@ public class AdminController {
 
     //---------------- delete Applicant -------------------
 
-    @GetMapping("/deleteApplicant")
+  /*  @GetMapping("/deleteApplicant")
     public String deleteUserGet(@RequestParam("username") String username) {
         applicantService.deleteApplicantByUsername(username);
         return "success_page";
     }
-
+*/
     @PostMapping("/deleteApplicant")
-    public String deleteUserPost(@RequestParam("username") String username) {
+    public String deleteUser(@RequestParam("username") String username) {
         applicantService.deleteApplicantByUsername(username);
         return "success_page";
     }

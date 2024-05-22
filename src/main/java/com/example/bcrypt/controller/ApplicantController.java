@@ -19,7 +19,6 @@ public class ApplicantController {
     @Autowired
     private ApplicantService applicantService;
 
-
     @GetMapping("/")
     public String home() {
         return "main-page";
@@ -42,12 +41,6 @@ public class ApplicantController {
 
     @GetMapping("/news")
     public String news() { return "news";}
-
-    @GetMapping("/unauthorized")
-    public String unauthorized() {
-        return "unauthorized";
-    }
-
 
 //----------------------------- Applicant's Deletion request ---------------------------------
 

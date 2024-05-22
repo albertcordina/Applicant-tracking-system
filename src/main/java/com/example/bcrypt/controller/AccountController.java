@@ -36,10 +36,10 @@ public class AccountController {
 
         // gets the currently logged-in user's username.
         String username = getCurrentLoggedInUsername();  // method to get the current username.
-
         Applicants applicants = applicantRepository.findByUsername(username); // method in ApplicantRepository to find applicant by username.
+
         if (applicants != null) {
-            model.addAttribute("name", applicants.getName());  // Add applicant's name to the model
+            model.addAttribute("name", applicants.getName());  // Add applicant's name to the model for the HTML account page.
         }
         return "account";  // Return the account.html template
     }
@@ -49,8 +49,11 @@ public class AccountController {
      */
     @GetMapping("/getAccountDetails")
     public String showManageAccountPage(Model model) {
+
+        // gets the currently logged-in user's username.
         String username = getCurrentLoggedInUsername(); // we call the method below.
         Applicants applicants = applicantRepository.findByUsername(username);
+
         if (applicants != null) {
             model.addAttribute("username", applicants.getUsername());
             model.addAttribute("name", applicants.getName());
