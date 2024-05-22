@@ -98,7 +98,7 @@ public class AdminController {
 
     @GetMapping("/totalNumberOfApplicants")
     public String totalNumber(Model model) {
-        int totalNumberOfApplicants = applicantService.getTotalNumberOfApplicants();
+        int totalNumberOfApplicants = (applicantService.getTotalNumberOfApplicants()) - 1;
         model.addAttribute("totalNumberOfApplicants", totalNumberOfApplicants);
         return "total_number_page";
     }

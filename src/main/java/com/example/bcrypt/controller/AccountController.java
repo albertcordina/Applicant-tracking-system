@@ -20,8 +20,7 @@ import java.util.List;
 @Controller
 public class AccountController {
 /*
-
-    Print out some data for the user without modifying anything on the server, a GET request is suitable.
+    Print out some data for the applicant without modifying anything on the server, a GET request is suitable.
     Send data to the server for processing and then display a response to the user, a POST request is appropriate.
 
     GET or POST requests connect with HTML page by their endpoint (URL path) associated with the request.
@@ -81,6 +80,6 @@ public class AccountController {
                 return principal.toString();
             }
         }
-        return null;  // No authenticated user
+        return null;  // No authenticated applicant.
     }
 }

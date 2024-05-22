@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 /*
-    NOTE: the name of the method should start with the default Spring data JPA function,
+    NOTE: the name of the method should start with the default Spring data JPA CRUD method/function,
           and then the name of the column, e.g. 'findByAge', i.e. 'findBy' + 'Age'.
  */
 public interface ApplicantRepository extends JpaRepository<Applicants, String> {
