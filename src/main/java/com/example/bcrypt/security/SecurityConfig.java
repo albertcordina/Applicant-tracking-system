@@ -43,11 +43,6 @@ public class SecurityConfig {
                         .requestMatchers("/submitData").permitAll()
                         .requestMatchers("/about_us").permitAll()
                         .requestMatchers("/applicantsByAge").permitAll()
-                        .requestMatchers("/findByOccupation").permitAll()
-                        .requestMatchers("/findByOccupation").permitAll()
-
-                        .requestMatchers("/patient").hasAnyRole("APPLICANT", "ADMIN")
-                        .requestMatchers("/doctors").hasRole("ADMIN")
 
                         .anyRequest().authenticated() // for login and logout not need to be authenticated.
 
