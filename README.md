@@ -1,4 +1,4 @@
-                                                  Project Overview
+#Project Overview
 
 Purpose: The primary purpose of this project is to create a platform where individuals can register and apply for financial government support. 
          It aims to streamline the process of collecting user information, submitting applications, and enabling administrators to efficiently manage and respond to these applications.
@@ -21,10 +21,46 @@ This system is designed to be scalable and secure, ensuring that it can handle a
 The project will also focus on compliance with data protection regulations to maintain user trust and legal standards.
 
 <<Provide a brief introduction to the technologies used and the architectural design of the application.>>
-Installation Guide
+
+
+##Installation Guide
+
 <<Detail the steps required to set up and run the application.
 Include any prerequisites, such as software dependencies or database configurations.
 Provide clear instructions for installation on different operating systems if applicable.>>
+
+This guide will walk you through the steps to install and run the Java Spring Boot application for managing financial aid applications.
+
+###Prerequisites
+**Java Development Kit (JDK):** Install the latest version of JDK, which can be downloaded from the Oracle website or other JDK providers.
+**Spring Boot:** Ensure you have the latest version of Spring Boot. It can be obtained through the Spring Initializr or by adding the dependency in your build configuration if you’re using Maven or Gradle.
+**Integrated Development Environment (IDE):** An IDE like IntelliJ IDEA, Eclipse, or Spring Tool Suite (STS) for easier management of the project.
+**Database:** A relational database such as MySQL or PostgreSQL. Make sure to install the database server and set it up before starting the application.
+Maven or Gradle: For dependency management and running the Spring Boot application.
+
+###Installation Steps
+1. **Clone the Repository:** Clone the project repository from the version control system like Git.
+```git clone https://github.com/albertcordina/Applicant-tracking-system.git```
+
+2. **Open the Project:**
+
+Open the project in your IDE and let it resolve all the dependencies.
+
+3. **Build the Application:**
+If using Maven:
+```mvn clean install```
+
+If using Gradle:
+```gradle build```
+
+4. **Run the Application:**
+If using Maven:
+```mvn spring-boot:run```
+
+If using Gradle:
+```gradle bootRun```
+
+5. **Access the Application:** Once the application is running, you can access it via a web browser at http://localhost:8080
 
 User Guide
 <<Describe the user interface and functionality of the application.
