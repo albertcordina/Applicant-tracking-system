@@ -1,4 +1,4 @@
-                                                         Project Overview
+                                                     Project Overview
 
 Purpose: The primary purpose of this project is to create a platform where individuals can register and apply for financial government support. 
          It aims to streamline the process of collecting user information, submitting applications, and enabling administrators to efficiently manage and respond to these applications.
@@ -47,7 +47,7 @@ Column:
 
 
 
-                                    Class and Method Documentation
+                                      Class and Method Documentation
 <<Document classes and methods comprehensively, including their purpose, inputs, outputs, and any side effects.>>      
 
 The whole code of the project Applicant tracking system consists of the 10 classes, 2 interfaces and 24 html pages:
