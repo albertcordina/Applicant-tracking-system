@@ -28,4 +28,4 @@ CREATE TABLE `authorities` (
                                CONSTRAINT `authorities4_ibfk_1` FOREIGN KEY (`username`) REFERENCES `applicants` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-<!-- for learning purpose: the password for all applicants is:  123  -->
+/* for learning purpose: the password for all applicants is:  123  */
