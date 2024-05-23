@@ -69,7 +69,7 @@ Include screenshots or diagrams to illustrate key features and workflows.>>
 Overview
 This guide will help you complete the registration form on our website. Follow the steps below to create your account successfully.
 
-1- Access the Registration page
+1. Access the Registration page
 
           A- Navigate to our website’s homepage.
           B- Click on the Register button usually located on the top right of the page.
