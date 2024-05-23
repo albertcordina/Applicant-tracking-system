@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 /*
     By eliminating boilerplate code, Spring Boot Lombok enhances
       productivity, readability, and maintainability of projects.
+
+      And the Validation is ensuring that the data provided through
+      HTTP requests, meets certain criteria before it is processed.
  */
 @Entity
 @Data

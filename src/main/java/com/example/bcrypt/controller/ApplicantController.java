@@ -16,12 +16,12 @@ import java.util.List;
 @Controller
 public class ApplicantController {
 
-    @Autowired
+    @Autowired // field injection
     private ApplicantService applicantService;
 
     @GetMapping("/")
     public String home() {
-        return "main-page";
+        return "main_page";
     }
 
     @GetMapping("/registration")
@@ -31,7 +31,7 @@ public class ApplicantController {
 
     @GetMapping("/login")
     public String login() {
-        return "login-page";
+        return "login_page";
     }
 
     @GetMapping("/applicant")
@@ -63,7 +63,7 @@ public class ApplicantController {
 
     @GetMapping("/removeAccountRequestSend")
     public String removeAccountRequestSend(@ModelAttribute("username") @Valid Applicants applicants, BindingResult bindingResult) {
-        if (bindingResult.hasErrors() || !applicants.isDeletion()) {
+        if (bindingResult.hasErrors() || !applicants.isDeletion()) { // if error or applicant has already sent the request.
             return "error";
         }
         applicantService.saveApplicant(applicants);
