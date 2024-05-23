@@ -70,15 +70,15 @@ Overview
 This guide will help you complete the registration form on our website. Follow the steps below to create your account successfully.
 
 1- Access the Registration page
-   A- Navigate to our website’s homepage.
-   B- Click on the Register button usually located on the top right of the page.
+          A- Navigate to our website’s homepage.
+          B- Click on the Register button usually located on the top right of the page.
    
 2. Fill in Your Personal Information
-    In this area you should fill all the information that is mentioned.
+          In this area you should fill all the information that is mentioned.
    
 4. Submit the Form
-   A- Once all fields are filled in the verified, click submit button.
-   B- If there are any errors they will be highlighted. Please correct them and try submitting again.
+          A- Once all fields are filled in the verified, click submit button.
+          B- If there are any errors they will be highlighted. Please correct them and try submitting again.
 
 Contact Support
   If you encounter any issues or need further assistance, please contact our support team through the “Contact us” page or via email at
