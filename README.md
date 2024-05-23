@@ -1,4 +1,4 @@
-Project Overview
+                                                         Project Overview
 
 Purpose: The primary purpose of this project is to create a platform where individuals can register and apply for financial government support. 
          It aims to streamline the process of collecting user information, submitting applications, and enabling administrators to efficiently manage and respond to these applications.
@@ -32,6 +32,7 @@ Include screenshots or diagrams to illustrate key features and workflows.>>
 Database Schema
 <<Present the database schema used by the application, including tables, relationships, and data types.
 Explain the purpose of each table and its attributes.>>
+
 Certainly Here’s a more detailed description of our database schema featuring an “APPLICANT” table and an “AUTHORITIES” table:
 Database Schema Overview
 Our database schema is designed to manage information about applicants and the authorities associated with them.
@@ -46,25 +47,27 @@ Column:
 
 
 
-Class and Method Documentation
-<<Document classes and methods comprehensively, including their purpose, inputs, outputs, and any side effects.>>                                                                                                                                                                                                                                                                  The whole code of the project Applicant tracking system consists of the 10 classes, 2 interfaces and 24 html pages:
+                                    Class and Method Documentation
+<<Document classes and methods comprehensively, including their purpose, inputs, outputs, and any side effects.>>      
+
+The whole code of the project Applicant tracking system consists of the 10 classes, 2 interfaces and 24 html pages:
 
 The 10 classes are:
 
  The main package of the project
 
-   - GovernmentFinancialSupportApplicantion
+    - GovernmentFinancialSupportApplicantion
 
          the “entry class” of the application (contains the ‘main’ method);
 
-   - CSVExporter
+    - CSVExporter
 
-        contains the method exportApplicantsToCSV method which helps in saving 
-        applicants.CSV file in the 'target' folder of the project (see the AdminController class);
+         contains the method exportApplicantsToCSV method which helps in saving 
+         applicants.CSV file in the 'target' folder of the project (see the AdminController class);
 
-The package ‘controller’
+ The package ‘controller’
 
-   - AccountController
+    - AccountController
 
          calls the ApplicantRepository interface;
 
