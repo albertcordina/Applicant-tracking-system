@@ -217,8 +217,8 @@ The 10 classes are:
 
 - ApplicantService
 
-  Calls the ApplicantRepository and AuthorityRepository interfaces.
-  Contains the methods:
+    Calls the ApplicantRepository and AuthorityRepository interfaces.
+    Contains the methods:
                           saveApplicant –              calls the save method of the ApplicantRepository interface.
                           findAllApplicants –          calls the findAll method of the Applicant Repository interface.
                           findApplicantByUsername –    calls the findByUsername method of the ApplicantRepository interface.
@@ -228,7 +228,7 @@ The 10 classes are:
                           deleteApplicantByUsername –  calls the deleteByUsername method of the AuthorityRepository interface and
                                                         then the deleteByUsername method of the ApplicantRepository interface.
 
-                         getTotalNumberOfApplicants – calls the findAll method of the ApplicantRepository and returns the number of elements in the list of the Applicants. 
+      getTotalNumberOfApplicants – calls the findAll method of the ApplicantRepository and returns the number of elements in the list of the Applicants. 
         
 
 The 2 interfaces are:
