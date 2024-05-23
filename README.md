@@ -47,7 +47,7 @@ Column:
 
 
 
-                                      Class and Method Documentation
+                                        Class and Method Documentation
 <<Document classes and methods comprehensively, including their purpose, inputs, outputs, and any side effects.>>      
 
 The whole code of the project Applicant tracking system consists of the 10 classes, 2 interfaces and 24 html pages:
