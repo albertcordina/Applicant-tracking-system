@@ -83,16 +83,19 @@ This guide will help you complete the registration form on our website. Follow t
           A- Once all fields are filled in the verified, click submit button.
           B- If there are any errors they will be highlighted. Please correct them and try submitting again.
 
-Contact Support
-  If you encounter any issues or need further assistance, please contact our support team through the “Contact us” page or via email at
-abcsupport@example.com.
-
+ Contact Support
+ 
+         If you encounter any issues or need further assistance, please contact our support 
+         team through the “Contact us” page or via email at abcsupport@example.com.
+ 
 
 
 Database Schema
 <<Present the database schema used by the application, including tables, relationships, and data types.
 Explain the purpose of each table and its attributes.>>
-Certainly Here’s a more detailed description of our database schema featuring an “APPLICANT” table and an “AUTHORITIES” table:
+
+Here’s a more detailed description of our database schema featuring an “APPLICANT” table and an “AUTHORITIES” table:
+
 Database Schema Overview
 Our database schema is designed to manage information about applicants and the authorities associated with them.
 This database schema consists of two primary tables: Applicant and Authorities. Below is an in-depth description of each table and their relationship to each other.
