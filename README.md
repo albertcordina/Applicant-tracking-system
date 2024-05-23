@@ -30,6 +30,23 @@ User Guide
 <<Describe the user interface and functionality of the application.
 Provide step-by-step instructions for users to navigate through the application and perform common tasks.
 Include screenshots or diagrams to illustrate key features and workflows.>>
+Overview
+This guide will help you complete the registration form on our website. Follow the steps below to create your account successfully.
+
+1- Access the Registration page
+   A- Navigate to our website’s homepage.
+   B- Click on the Register button usually located on the top right of the page.
+2. Fill in Your Personal Information
+    In this area you should fill all the information that is mentioned.
+3. Submit the Form
+   A- Once all fields are filled in the verified, click submit button.
+   B- If there are any errors they will be highlighted. Please correct them and try submitting again.
+
+Contact Support
+  If you encounter any issues or need further assistance, please contact our support team through the “Contact us” page or via email at
+abcsupport@example.com.
+
+
 
 Database Schema
 <<Present the database schema used by the application, including tables, relationships, and data types.
