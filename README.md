@@ -34,7 +34,6 @@ Include screenshots or diagrams to illustrate key features and workflows.>>
 Database Schema
 <<Present the database schema used by the application, including tables, relationships, and data types.
 Explain the purpose of each table and its attributes.>>
-
 Certainly Here’s a more detailed description of our database schema featuring an “APPLICANT” table and an “AUTHORITIES” table:
 Database Schema Overview
 Our database schema is designed to manage information about applicants and the authorities associated with them.
@@ -46,6 +45,31 @@ The applicant table stores personal and applicant related details about individu
 
 
 Column:
+1- Username - The applicant username, stored as a string. Links to the Authority username in the authorities table to indicate which authority is handling the applicant case.
+2- Password - The applicant password, stored as a string.
+3- Name - The applicant name, stored as a string.
+4- Surname - The applicant's surname, stored as a string.
+5- Age -  The applicant age, stored as an int.
+6- Occupation - The applicant occupation, stored as a string.
+7- Email - The applicant email, stored as a string.
+8- Income - The applicant income, stored as a double.
+9- Comments - The applicant comments, stored as a string.
+10- Status - The current status of the application (e.g. Pending, Approved, Rejected), stored as a string type.
+
+Authorities Table
+Table Name: Authorities
+The authorities table contains information about the authorities responsible for handling the application.  Each record in the table represents an individual authority or an authoritative body.
+Column:
+1- Username - stored as a string, linked to the applicant username from the applicant table.
+2- Authority - stored as a string, and it is a unique identifier for each authority.
+
+Data Flow
+1- Applicant  Submits Application - An individual fills out an application form the submit button, creating a new entry in the applicant table.
+2- Authority Assignment - The applicant is assigned to a specific authority, indicated by the setting the  “username” in both tables.
+3- Application Review - The assigned review of the application. The status is updated in the Applicant table to reflect the progress (e.g. Pending, Approved, Rejected).
+
+This schema provides a foundational structure for managing applicants and the authorities responsible for processing their applications.
+
 
 
 
@@ -86,3 +110,6 @@ The 10 classes are:
 Credits and Acknowledgments
 <<Acknowledge any third-party libraries, frameworks, or resources used in the development of the project.
 Give credit to team members for their contributions to different aspects of the project.>>
+
+
+
