@@ -59,12 +59,4 @@ public class Applicants {
     private String status;
 
     private boolean deletion;
-
-
-
-/*   public void setPassword(String password) {
-        // BcryptPasswordEncoder is used to hash the password before storing it
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        this.password = passwordEncoder.encode(password);
-    } */
 }
