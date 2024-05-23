@@ -72,9 +72,11 @@ This guide will help you complete the registration form on our website. Follow t
 1- Access the Registration page
    A- Navigate to our website’s homepage.
    B- Click on the Register button usually located on the top right of the page.
+   
 2. Fill in Your Personal Information
     In this area you should fill all the information that is mentioned.
-3. Submit the Form
+   
+4. Submit the Form
    A- Once all fields are filled in the verified, click submit button.
    B- If there are any errors they will be highlighted. Please correct them and try submitting again.
 
