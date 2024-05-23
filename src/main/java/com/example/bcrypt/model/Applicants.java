@@ -52,7 +52,7 @@ public class Applicants {
     @NotNull(message = "is required")
     @Min(value = 1, message = "Income must be at least 1")
     @Max(value = 2000, message = "Income must be at most 2000")
-    private int income;
+    private double income;
 
     @Pattern(regexp = "^.{0,1000}$", message = "Comments cannot exceed 1000 characters")
     private String comments;
