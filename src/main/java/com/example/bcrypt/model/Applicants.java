@@ -21,7 +21,6 @@ public class Applicants {
 
     @Id
     @NotBlank(message = "is required")
-    //  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String username;
 
     @NotBlank(message = "is required")
