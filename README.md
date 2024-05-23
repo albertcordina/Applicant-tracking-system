@@ -12,8 +12,10 @@ Goals:
          
 Intended Audience:
 
-         Users: Individuals seeking financial government support who are comfortable with using online platforms to submit personal information and applications.
-         Administrators: Personnel who will oversee the application process, review user information, and make decisions on the disbursement of aid.
+         Users: Individuals seeking financial government support who are comfortable with 
+                using online platforms to submit personal information and applications.
+         Administrators: Personnel who will oversee the application process, review user 
+                         information, and make decisions on the disbursement of aid.
 
 This system is designed to be scalable and secure, ensuring that it can handle a growing number of users and sensitive data with integrity. 
 The project will also focus on compliance with data protection regulations to maintain user trust and legal standards.
