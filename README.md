@@ -240,7 +240,7 @@ The 2 interfaces are:
 
     Contains the following methods:
           
-               existsByUsername, findByUsername, deleteByUsername, findByAge, findByOccupation and findByDeletionIsTrue
+      existsByUsername, findByUsername, deleteByUsername, findByAge, findByOccupation and findByDeletionIsTrue
 
 
 - AuthorityRepository extends the JpaRepository, i.e.  Spring Data JPA
