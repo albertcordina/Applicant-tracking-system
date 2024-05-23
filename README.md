@@ -91,37 +91,160 @@ This schema provides a foundational structure for managing applicants and the au
 
 
                                         Class and Method Documentation
-<<Document classes and methods comprehensively, including their purpose, inputs, outputs, and any side effects.>>      
 
-The whole code of the project Applicant tracking system consists of the 10 classes, 2 interfaces and 24 html pages:
+The project Applicant tracking system consists of the 10 classes, 2 interfaces:
 
 The 10 classes are:
 
- The main package of the project
+ the main package of the project
 
-    - GovernmentFinancialSupportApplicantion
+- GovernmentFinancialSupportApplicantion
 
-         the “entry class” of the application (contains the ‘main’ method);
+    the “entry class” of the applicantion. Contains the ‘main’ method.
 
-    - CSVExporter
+- CSVExporter
 
-         contains the method exportApplicantsToCSV method which helps in saving 
-         applicants.CSV file in the 'target' folder of the project (see the AdminController class);
+    contains the mthod exportApplicantsToCSV, which helps in saving applicants.CSV file in 'target' folder of the project (see the AdminController class).
 
- The package ‘controller’
+  the package ‘controller’
 
-    - AccountController
+- AccountController
 
-         calls the ApplicantRepository interface;
+    calls the ApplicantRepository interface
 
-         contains the endpoint methods @GetMapping:
-            showAccountPage – calls the getCurrentLogedInUsername method and 
-                                              findByUsername to find a user with its data by username.
-           showManageAccountPage – shows the data of the Applicant (accessed from the
-                                                             applicant’s account)
+      contains the endpoint methods @GetMapping:
+           showAccountPage – calls the getCurrentLogedInUsername method and findByUsername to find user with its data by username.
+           showManageAccountPage – shows the data of the Applicant (accessed from the applicant’s account)
+            
+           the method getCurrentLoggedInUsername – is retriving the username of the currently authenticated user without duplicating
+                                                    the authentication logic in multiple places.
+      
 
-        The method get CurrentLoggedInUsername – is retrieving the username of the currently 
-                        authenticated user without duplicating the authentication logic in multiple places.
+- AdminController
+
+   calls the ApplicantService class and contains the initBinder method with @InitBinder annotation, which trims strings for all String fields
+
+            the endpoint methods @GetMapping:
+                 admin- get to the admin.html page
+                 about_us – get to the about_us.html page
+                 manageApplicants – calls findAllApplicants method of the ApplicantService class and get to the manage_applicants.html page
+              
+            to delete applicant endpoint method @PostMethod:
+                 deleteUser – calls deleteApplicantByUsername of the ApplicantService class and gets to the success_page.html page
+
+            to find applicant by AGE endpoints methods @GetMapping:
+                 findByAgeGet – get to the find_by_age_page.html page
+                 findByAgePost – calls findApplicantByAge method of the ApplicantService class and gets to the result_by_age_page.html page
+
+            to find applicant by Occupation endpoints methods @GetMapping:
+                 findByOccupationPage – get to the find_by_occupation_page.html page
+                 findByOccupation – calls findApplicantByOccupation method of the ApplicantService class and gets to the result_by_occupation_page.html page
+
+            to find the total number of the applicants endpoint method @GetMapping:
+                 totalNumber – calls getTotalNumberOfApplicants method of the ApplicantService class and gets to the total_number_page.html page
+
+            to update the status of the application endpoint methods @GetMapping:
+                 updateStatusPage – calls findApplicantByUsername method of the ApplicantService class and gets to the update_status.html page.
+                 updateStatus – calls saveApplicant method of the ApplicantService class and gets to the success_page.html page.
+
+            to export the list of the users to CSV file endpoint method @PostMapping:
+                 exportToCSVinProject – calls the findAllApplicants method of the ApplicantService class and exports all applicants to CSV file.
+
+
+- ApplicantController
+               
+   calls the ApplicantService class
+
+          contains the endpoint methods @GetMapping:
+          home – get to the main_page.html page
+          registration – get to the registration.html page
+          login – get to the login_page.html page
+          applicant – get to the applicant.html page
+          news -get to the news.html page
+   
+          Applicant’s deletion request:
+
+          showApplicantsDeletionRequest - for Admin review. It calls findApplicantsByDeletion method of the
+                                          ApplicantService class and gets to the account_removal_list.html page.
+
+          removeAccountRequestGetPage –   for Applicant to send the request. It calls findApplicantByUsername mehtod of
+                                          the ApplicantService class and gets the Applicant to the account_removal_request.html page.
+
+          removalAccountRequestSend –     sends the Applicant’s request, i.e. calls the saveApplicant method of the ApplicantService
+                                          class and changes the boolean deletion to true, then gets to the success_page.html page.
+
+   update the Applicant’s data:
+
+          updateApplicantPage –           for Applicants. It calls the findApplicantByUsername method of the ApplicantService class and gets to the update_form.html page.
+          updateApplicant –               calls the saveApplicant method of the ApplicantService class and gets to success_page.html page.
+
+
+- RegistrationController
+
+    Calls the ApplicantRepository interface and SaveApplicant class. 
+    Contains the initBinder method with @InitBinder annotation, which trims strings for all String fields.
+
+           showRegistrationForm - @GetMapping endpoint method to get to the registration.html page.
+           submitRegistration - @PostMapping endpoint method with the following functuions:
+                 calls the existsByUsername method of the ApplicantRepository interface 
+                 hash the password using Bcrypt before saving
+                 calls the saveApplicant method of the SaveApplicant class
+                 if the applicant is the age for retirement, i.e. > 67, AND did not register the occupation as retired send the Applicant to the retired_page.html page 
+                 sends the Applicant to the registration_confirmation.html page.
+
+
+ the package ‘model’:
+
+- Applicants
+                Entity class, @Entity with the Spring Boot Lombok, wich enhances productivity, readabiliy, and maintainability of the project.
+                And the Validation is ensuring that the data provided through HTTP requests, meets certain criteria before it is processed.
+                 Contains the parameter ‘username’ as the primary key and other parameters:
+                      password, name, surname, age, occupation, email, income, comments, status and deletion.           
+
+- Authorities
+                Entity class, the same as the Applicants. It has the parameter ‘username’ as the primary key and also as the foreign key of the Applicant’s ‘username’.
+                The parameter ‘authority’ for holding the Role of the Applicant is the second and last parameter of the Authorities class.
+ 
+- SaveApplicant
+
+    Calls the ApplicantRepository and AuthorityRepository interfaces.
+    Contains the saveApplicant method which calls save methods of the Applicant and Authority Repositories.
+                 The parameter ‘authority’ of the authorities table is set as ‘ROLE_APPLICANT’ by default.
+                 The parameter ‘status’ of the applicants table is set as ‘On the review’ by default.
+                 The parameter ‘deletion’ of the applicants table is set as ‘false’ by default.
+
+ the package ‘service’
+
+- ApplicantService
+
+  Calls the ApplicantRepository and AuthorityRepository interfaces.
+  Contains the methods:
+                          saveApplicant –              calls the save method of the ApplicantRepository interface.
+                          findAllApplicants –          calls the findAll method of the Applicant Repository interface.
+                          findApplicantByUsername –    calls the findByUsername method of the ApplicantRepository interface.
+                          findApplicantByAge –         calls the findByAge method of the ApplicantRepository interface.
+                          findApplicantsByOccupation – calls the findByOccupation method of the ApplicantRepository interface.
+                          findApplicantByDeletion –    calls the findByDeletionIsTrue method of the ApplicantRepository interface.
+                          deleteApplicantByUsername –  calls the deleteByUsername method of the AuthorityRepository interface and
+                                                        then the deleteByUsername method of the ApplicantRepository interface.
+
+                         getTotalNumberOfApplicants – calls the findAll method of the ApplicantRepository and returns the number of elements in the list of the Applicants. 
+        
+
+The 2 interfaces are:
+
+ the package ‘repo’
+
+- ApplicantRepository extends the JpaRepository, i.e.  Spring Data JPA 
+
+    Contains the following methods:
+          
+               existsByUsername, findByUsername, deleteByUsername, findByAge, findByOccupation and findByDeletionIsTrue
+
+
+- AuthorityRepository extends the JpaRepository, i.e.  Spring Data JPA
+ 
+     Contains the method deleteByUsername
 
 
 Credits and Acknowledgments
