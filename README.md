@@ -112,16 +112,16 @@ The 10 classes are:
 
     calls the ApplicantRepository interface
 
-      contains the endpoint methods @GetMapping:
+        the endpoint methods @GetMapping:
            showAccountPage – calls the getCurrentLogedInUsername method and findByUsername to find user with its data by username.
            showManageAccountPage – shows the data of the Applicant (accessed from the applicant’s account)
             
-           the method getCurrentLoggedInUsername – is retriving the username of the currently authenticated user without duplicating
+        the method getCurrentLoggedInUsername – is retriving the username of the currently authenticated user without duplicating
                                                     the authentication logic in multiple places.
       
 
 - AdminController
-
+ 
    calls the ApplicantService class and contains the initBinder method with @InitBinder annotation, which trims strings for all String fields
 
             the endpoint methods @GetMapping:
