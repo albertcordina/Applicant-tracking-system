@@ -112,10 +112,10 @@ Columns:
     2- Password -   The applicant password, stored as a string.
     3- Name -       The applicant name, stored as a string.
     4- Surname -    The applicant's surname, stored as a string.
-    5- Age -        The applicant age, stored as an int.
+    5- Age -        The applicant age, stored as an int (not under the 18).
     6- Occupation - The applicant occupation, stored as a string.
     7- Email -      The applicant email, stored as a string.
-    8- Income -     The applicant income, stored as a double.
+    8- Income -     The applicant income, stored as a double (not above the 2000).
     9- Comments -   The applicant comments, stored as a string.
     10- Status -    The current status of the application (e.g. Pending, Approved, Rejected), stored as a string type.
 
@@ -240,7 +240,7 @@ The 10 classes are:
                  calls the existsByUsername method of the ApplicantRepository interface 
                  hash the password using Bcrypt before saving
                  calls the saveApplicant method of the SaveApplicant class
-                 if the applicant is the age for retirement, i.e. > 67, AND did not register the occupation as retired send the Applicant to the retired_page.html page 
+                 if the applicant is the age for retirement, i.e. > 67, AND did not register the occupation as retired- sends the Applicant to the retired_page.html page 
                  sends the Applicant to the registration_confirmation.html page.
 
 
