@@ -13,7 +13,7 @@ CREATE TABLE `applicants` (
                          `occupation` varchar(20) NOT NULL,
                          `email` varchar(50) NOT NULL,
                          `income` INT NOT NULL,
-                         `comments` varchar(200) NOT NULL,
+                         `comments` varchar(200),
 
                          `status` varchar(200) NOT NULL DEFAULT "On the review", -- Default set status of the application.
                          `enabled` tinyint NOT NULL DEFAULT 1, -- Default value set to 1 (enabled), 0 - is disable the row.
