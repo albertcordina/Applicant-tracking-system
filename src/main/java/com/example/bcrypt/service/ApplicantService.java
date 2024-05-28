@@ -28,9 +28,10 @@ public class ApplicantService {
 
     public List<Applicants> findApplicantByOccupation (String occ){ return applicantRepository.findByOccupation(occ);}
 
-    public List<Applicants> findApplicantsByDeletion() {
-        return applicantRepository.findByDeletionIsTrue();
-    }
+    public List<Applicants> findApplicantsByDeletion() { return applicantRepository.findByDeletionIsTrue();}
+
+    public String findEmailByUsername(String username) { return applicantRepository.findEmailByUsername(username); }
+
 
 /*
       @Transactional: the method is executed within a transaction managed by Spring.
