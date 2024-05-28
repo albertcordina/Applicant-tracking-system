@@ -31,36 +31,31 @@ Provide clear instructions for installation on different operating systems if ap
 
 This guide will walk you through the steps to install and run the Java Spring Boot application for managing financial aid applications.
 
-###Prerequisites
-**Java Development Kit (JDK):** Install the latest version of JDK, which can be downloaded from the Oracle website or other JDK providers.
-**Spring Boot:** Ensure you have the latest version of Spring Boot. It can be obtained through the Spring Initializr or by adding the dependency in your build configuration if you’re using Maven or Gradle.
-**Integrated Development Environment (IDE):** An IDE like IntelliJ IDEA, Eclipse, or Spring Tool Suite (STS) for easier management of the project.
-**Database:** A relational database such as MySQL or PostgreSQL. Make sure to install the database server and set it up before starting the application.
-Maven or Gradle: For dependency management and running the Spring Boot application.
+Prerequisites:
 
-###Installation Steps
-1. **Clone the Repository:** Clone the project repository from the version control system like Git.
-```git clone https://github.com/albertcordina/Applicant-tracking-system.git```
+      Java Development Kit (JDK)- Install the latest version of JDK, which can be downloaded from the Oracle website or other JDK providers.
+      Spring Boot- Ensure you have the latest version of Spring Boot. It can be obtained through the Spring Initializr 
+                              or by adding the dependency in your build configuration if you’re using Maven or Gradle.
+      Integrated Development Environment (IDE)- An IDE like IntelliJ IDEA, Eclipse, or Spring Tool Suite (STS) for easier management of the project.
+      Database- A relational database such as MySQL or PostgreSQL. Make sure to install the database server and set it up before starting the application.
+      Maven or Gradle- For dependency management and running the Spring Boot application.
 
-2. **Open the Project:**
+Installation Steps:
 
-Open the project in your IDE and let it resolve all the dependencies.
+    1. Clone the Repository- Clone the project repository from the version control system like Git.
+              `git clone https://github.com/albertcordina/Applicant-tracking-system.git`
 
-3. **Build the Application:**
-If using Maven:
-```mvn clean install```
+    2. Open the Project- Open the project in your IDE and let it resolve all the dependencies.
 
-If using Gradle:
-```gradle build```
+    3. Build the Application- 
+        If using Maven: `mvn clean install`
+        If using Gradle:`gradle build`
 
-4. **Run the Application:**
-If using Maven:
-```mvn spring-boot:run```
+    4. Run the Application-
+        If using Maven:`mvn spring-boot:run`
+        If using Gradle:`gradle bootRun`
 
-If using Gradle:
-```gradle bootRun```
-
-5. **Access the Application:** Once the application is running, you can access it via a web browser at http://localhost:8080
+    5. Access the Application- Once the application is running, you can access it via a web browser at http://localhost:8080
 
 User Guide
 <<Describe the user interface and functionality of the application.
