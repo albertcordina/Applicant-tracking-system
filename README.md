@@ -63,10 +63,8 @@ Installation Steps:
 
     5. Access the Application- Once the application is running, you can access it via a web browser at http://localhost:8080
 
-                                           
-<<Describe the user interface and functionality of the application.
-Provide step-by-step instructions for users to navigate through the application and perform common tasks.
-Include screenshots or diagrams to illustrate key features and workflows.>>
+
+                                        
 
                                                  User Guide
 
@@ -94,8 +92,8 @@ This guide will help you complete the registration form on our website. Follow t
          team through the “Contact us” page or via email at abcsupport@example.com.
  
 
-<<Present the database schema used by the application, including tables, relationships, and data types.
-Explain the purpose of each table and its attributes.>>
+<< Present the database schema used by the application, including tables, relationships, and data types.
+Explain the purpose of each table and its attributes. >> 
 
 
                                                     Database Schema
