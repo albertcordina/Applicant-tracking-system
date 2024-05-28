@@ -63,11 +63,12 @@ Installation Steps:
 
     5. Access the Application- Once the application is running, you can access it via a web browser at http://localhost:8080
 
-                                           User Guide
+                                           
 <<Describe the user interface and functionality of the application.
 Provide step-by-step instructions for users to navigate through the application and perform common tasks.
 Include screenshots or diagrams to illustrate key features and workflows.>>
 
+                                     User Guide
 
 Overview
 This guide will help you complete the registration form on our website. Follow the steps below to create your account successfully:
