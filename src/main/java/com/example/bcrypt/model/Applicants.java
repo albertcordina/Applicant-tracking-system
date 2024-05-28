@@ -26,7 +26,7 @@ public class Applicants {
     @NotBlank(message = "is required")
    /* @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", message =
             "Password must be at least 8 characters long and contain at least one letter and one number") */
-    private String password;
+    private String password; // for learning purposes the password is simplified, i.e. without the above Validation.
 
 
     @NotBlank(message = "is required")
