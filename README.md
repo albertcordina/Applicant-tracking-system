@@ -208,9 +208,9 @@ The 11 classes are:
 
 - ApplicantController
                
-   calls the ApplicantService class
+      Calls the ApplicantService class
 
-          contains the endpoint methods @GetMapping:
+          Contains the endpoint methods @GetMapping:
           home – get to the main_page.html page
           registration – get to the registration.html page
           login – get to the login_page.html page
@@ -236,8 +236,8 @@ The 11 classes are:
 
 - RegistrationController
 
-    Calls the ApplicantRepository interface and SaveApplicant class. 
-    Contains the initBinder method with @InitBinder annotation, which trims strings for all String fields.
+      Calls the ApplicantRepository interface and SaveApplicant class. 
+      Contains the initBinder method with @InitBinder annotation, which trims strings for all String fields.
 
            showRegistrationForm - @GetMapping endpoint method to get to the registration.html page.
            submitRegistration - @PostMapping endpoint method with the following functuions:
@@ -251,28 +251,30 @@ The 11 classes are:
  the package ‘model’:
 
 - Applicants
+  
                 Entity class, @Entity with the Spring Boot Lombok, wich enhances productivity, readabiliy, and maintainability of the project.
                 And the Validation is ensuring that the data provided through HTTP requests, meets certain criteria before it is processed.
                  Contains the parameter ‘username’ as the primary key and other parameters:
                       password, name, surname, age, occupation, email, income, comments, status and deletion.           
 
 - Authorities
+  
                 Entity class, the same as the Applicants. It has the parameter ‘username’ as the primary key and also as the foreign key of the Applicant’s ‘username’.
                 The parameter ‘authority’ for holding the Role of the Applicant is the second and last parameter of the Authorities class.
  
 - SaveApplicant
 
-    Calls the ApplicantRepository and AuthorityRepository interfaces.
-    Contains the saveApplicant method which calls save methods of the Applicant and Authority Repositories.
+       Calls the ApplicantRepository and AuthorityRepository interfaces.
+       Contains the saveApplicant method which calls save methods of the Applicant and Authority Repositories.
                  The parameter ‘authority’ of the authorities table is set as ‘ROLE_APPLICANT’ by default.
                  The parameter ‘status’ of the applicants table is set as ‘On the review’ by default.
                  The parameter ‘deletion’ of the applicants table is set as ‘false’ by default.
 
- the package ‘service’
+the package ‘service’
 
-- ApplicantService
+ - ApplicantService
 
-    Calls the ApplicantRepository and AuthorityRepository interfaces.
+         Calls the ApplicantRepository and AuthorityRepository interfaces.
          Contains the methods:
   
                           saveApplicant –              calls the save method of the ApplicantRepository interface.
@@ -285,11 +287,11 @@ The 11 classes are:
                           deleteApplicantByUsername –  calls the deleteByUsername method of the AuthorityRepository interface and
                                                         then the deleteByUsername method of the ApplicantRepository interface.
 
-      getTotalNumberOfApplicants – calls the findAll method of the ApplicantRepository and returns the number of elements in the list of the Applicants.
+       getTotalNumberOfApplicants – calls the findAll method of the ApplicantRepository and returns the number of elements in the list of the Applicants.
 
 - EmailService
 
-     Calls the JavaMailSender which provides a robust and flexible way to integrate email functionality into Spring application.
+       Calls the JavaMailSender which provides a robust and flexible way to integrate email functionality into Spring application.
        Contains the method sendEmail which calls the SimpleMailMessage class of Spring framework with its methods;
                               setTo, setSubject setText, and calls the method send of JavaMailSender class
         
@@ -298,17 +300,17 @@ The 2 interfaces are:
 
  the package ‘repo’
 
-- ApplicantRepository extends the JpaRepository, i.e.  Spring Data JPA 
+ - ApplicantRepository extends the JpaRepository, i.e.  Spring Data JPA 
 
-    Contains the following methods:
+       Contains the following methods:
           
-      existsByUsername, findByUsername, deleteByUsername, findByAge, findByOccupation and findByDeletionIsTrue
-      findEmailByUsername - the method with @Query annotation, which gets the email according to the username of the applicant
+        existsByUsername, findByUsername, deleteByUsername, findByAge, findByOccupation and findByDeletionIsTrue
+        findEmailByUsername - the method with @Query annotation, which gets the email according to the username of the applicant
 
 
-- AuthorityRepository extends the JpaRepository, i.e.  Spring Data JPA
+ - AuthorityRepository extends the JpaRepository, i.e.  Spring Data JPA
  
-     Contains the method deleteByUsername
+       Contains the method deleteByUsername
 
 
 Credits and Acknowledgments
