@@ -155,7 +155,8 @@ The 11 classes are:
 
   - CSVExporter
 
-        Contains the mthod exportApplicantsToCSV, which helps in saving applicants.CSV file in 'target' folder of the project (see the AdminController class).
+        Contains the mthod exportApplicantsToCSV, which helps in saving applicants.CSV file
+                    in 'target' folder of the project (see the AdminController class).
 
 
  the package ‘controller’
