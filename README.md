@@ -21,7 +21,7 @@ This system is designed to be scalable and secure, ensuring that it can handle a
 The project will also focus on compliance with data protection regulations to maintain user trust and legal standards.
 
 
-                                    Installation Guide
+                                      Installation Guide
 
 <<Detail the steps required to set up and run the application.
 Include any prerequisites, such as software dependencies or database configurations.
@@ -63,12 +63,14 @@ Installation Steps:
 
     5. Access the Application- Once the application is running, you can access it via a web browser at http://localhost:8080
 
-User Guide
+                                           User Guide
 <<Describe the user interface and functionality of the application.
 Provide step-by-step instructions for users to navigate through the application and perform common tasks.
 Include screenshots or diagrams to illustrate key features and workflows.>>
+
+
 Overview
-This guide will help you complete the registration form on our website. Follow the steps below to create your account successfully.
+This guide will help you complete the registration form on our website. Follow the steps below to create your account successfully:
 
 1. Access the Registration page
 
