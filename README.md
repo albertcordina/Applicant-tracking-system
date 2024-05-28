@@ -1,4 +1,4 @@
-#Project Overview
+                                    Project Overview
 
 Purpose: The primary purpose of this project is to create a platform where individuals can register and apply for financial government support. 
          It aims to streamline the process of collecting user information, submitting applications, and enabling administrators to efficiently manage and respond to these applications.
@@ -23,7 +23,7 @@ The project will also focus on compliance with data protection regulations to ma
 <<Provide a brief introduction to the technologies used and the architectural design of the application.>>
 
 
-##Installation Guide
+                                   Installation Guide
 
 <<Detail the steps required to set up and run the application.
 Include any prerequisites, such as software dependencies or database configurations.
