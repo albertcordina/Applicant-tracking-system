@@ -33,7 +33,8 @@ This guide will walk you through the steps to install and run the Java Spring Bo
 
 Prerequisites:
 
-      Java Development Kit (JDK)- Install the latest version of JDK, which can be downloaded from the Oracle website or other JDK providers.
+      Java Development Kit (JDK)- Install the latest version of JDK, which can be downloaded
+                                            from the Oracle website or other JDK providers.
       Spring Boot- Ensure you have the latest version of Spring Boot. It can be obtained through the Spring Initializr 
                               or by adding the dependency in your build configuration if you’re using Maven or Gradle.
       Integrated Development Environment (IDE)- An IDE like IntelliJ IDEA, Eclipse, or Spring Tool Suite (STS) for easier management of the project.
