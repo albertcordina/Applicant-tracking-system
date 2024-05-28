@@ -3,6 +3,7 @@ package com.example.bcrypt.controller;
 import com.example.bcrypt.CSVExporter;
 import com.example.bcrypt.model.Applicants;
 import com.example.bcrypt.service.ApplicantService;
+import com.example.bcrypt.service.EmailService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -22,6 +23,9 @@ public class AdminController {
 
     @Autowired
     private ApplicantService applicantService;
+
+    @Autowired
+    private EmailService emailService;
 
     public AdminController(ApplicantService applicantService) {
         this.applicantService = applicantService;
@@ -49,17 +53,23 @@ public class AdminController {
         return "manage_applicants";
     }
 
-    //---------------- delete Applicant -------------------
+    /* delete Applicant with the triggering of automated email/acknowledgement of the deletion.
+        This setup ensures that when an applicant is deleted, an email is sent to their
+             registered email address confirming the deletion of their account. */
 
-  /*  @GetMapping("/deleteApplicant")
-    public String deleteUserGet(@RequestParam("username") String username) {
-        applicantService.deleteApplicantByUsername(username);
-        return "success_page";
-    }
-*/
     @PostMapping("/deleteApplicant")
     public String deleteUser(@RequestParam("username") String username) {
+        // Fetch the applicant's email before deleting
+        String email = applicantService.findEmailByUsername(username);
+
+        // Delete the applicant
         applicantService.deleteApplicantByUsername(username);
+
+        // Send the acknowledgement email
+        String subject = "Account Deletion Confirmation";
+        String text = "Dear Applicant,\n\nYour account has been successfully deleted.\n\nBest regards,\nGovernment support Team";
+        emailService.sendEmail(email, subject, text);
+
         return "success_page";
     }
     //------------------------------ find Applicant by AGE -----------------------------------
@@ -141,12 +151,4 @@ public class AdminController {
             return "error";
         }
     }
-    /*   @PostMapping("/export") //  saving applicants.CSV file in PC downloads.
-    public void exportToCSVinPC(HttpServletResponse response) throws IOException {
-        List<Applicants> applicants = applicantService.findAllApplicants();
-        response.setContentType("text/csv");
-        response.setHeader("Content-Disposition", "attachment; filename=\"applicants.csv\"");
-        CSVExporter.exportApplicantsToCSV(response.getWriter(), applicants);
-    }
-*/
 }
