@@ -175,11 +175,11 @@ The 11 classes are:
 
 - AdminController
  
-   calls the ApplicantService class and contains the initBinder method with @InitBinder annotation, which trims strings for all String fields
+      calls the ApplicantService class and contains the initBinder method with @InitBinder annotation, which trims strings for all String fields
 
             the endpoint methods @GetMapping:
                  admin- get to the admin.html page
-                 about_us – get to the about_us.html page
+                 about_us –  get to the about_us.html page
                  manageApplicants – calls findAllApplicants method of the ApplicantService class and get to the manage_applicants.html page
               
             to delete applicant endpoint method @PostMethod:
