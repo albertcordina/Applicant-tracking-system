@@ -155,13 +155,13 @@ The 11 classes are:
 
 - CSVExporter
 
-     Contains the mthod exportApplicantsToCSV, which helps in saving applicants.CSV file in 'target' folder of the project (see the AdminController class).
+      Contains the mthod exportApplicantsToCSV, which helps in saving applicants.CSV file in 'target' folder of the project (see the AdminController class).
 
   the package ‘controller’
   
 - AccountController
 
-     Calls the ApplicantRepository interface
+      Calls the ApplicantRepository interface
 
         the endpoint methods @GetMapping:
            showAccountPage – calls the getCurrentLogedInUsername method and findByUsername to find user with its data by username.
