@@ -228,7 +228,8 @@ The 11 classes are:
           removalAccountRequestSend –     sends the Applicant’s request, i.e. calls the saveApplicant method of the ApplicantService
                                           class and changes the boolean deletion to true, then gets to the success_page.html page.
 
-   update the Applicant’s data:
+
+          Update the Applicant’s data:
 
           updateApplicantPage –  for Applicants. It calls the findApplicantByUsername method of the ApplicantService class and gets to the update_form.html page.
           updateApplicant –      calls the saveApplicant method of the ApplicantService class and gets to success_page.html page.
