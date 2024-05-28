@@ -24,6 +24,8 @@ public class Applicants {
     private String username;
 
     @NotBlank(message = "is required")
+   /* @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", message =
+            "Password must be at least 8 characters long and contain at least one letter and one number") */
     private String password;
 
 
@@ -38,7 +40,7 @@ public class Applicants {
     @NotNull(message = "is required")
     @Positive(message = "Number must be positive")
     @Min(value = 18, message = "Your age must be at least 18")
-    private int age;
+    private Integer age;
 
 
     @NotBlank(message = "is required")
@@ -51,7 +53,7 @@ public class Applicants {
     @NotNull(message = "is required")
     @Min(value = 1, message = "Income must be at least 1")
     @Max(value = 2000, message = "Income must be at most 2000")
-    private double income;
+    private Double income;
 
     @Pattern(regexp = "^.{0,1000}$", message = "Comments cannot exceed 1000 characters")
     private String comments;
