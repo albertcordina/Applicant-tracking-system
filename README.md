@@ -149,25 +149,26 @@ The 11 classes are:
 
  the main package of the project
 
-- GovernmentFinancialSupportApplicantion
+  - GovernmentFinancialSupportApplicantion
 
       the “entry class” of the applicantion. Contains the ‘main’ method.
 
-- CSVExporter
+  - CSVExporter
 
       Contains the mthod exportApplicantsToCSV, which helps in saving applicants.CSV file in 'target' folder of the project (see the AdminController class).
 
-  the package ‘controller’
+
+ the package ‘controller’
   
-- AccountController
+   - AccountController
 
-      Calls the ApplicantRepository interface
+         Calls the ApplicantRepository interface
 
-        the endpoint methods @GetMapping:
+         the endpoint methods @GetMapping:
            showAccountPage – calls the getCurrentLogedInUsername method and findByUsername to find user with its data by username.
            showManageAccountPage – shows the data of the Applicant (accessed from the applicant’s account)
             
-        the method getCurrentLoggedInUsername – is retriving the username of the currently authenticated user without duplicating
+         the method getCurrentLoggedInUsername – is retriving the username of the currently authenticated user without duplicating
                                                     the authentication logic in multiple places.
       
 
