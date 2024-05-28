@@ -55,8 +55,7 @@ public class SecurityConfig {
                 )
                 .logout(logout -> logout.permitAll()
                 );
-           //     .exceptionHandling(conf -> conf.accessDeniedPage("/unauthorized"));
-
+        
         return http.build();
     }
 }
