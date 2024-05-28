@@ -1,4 +1,4 @@
-                                                      Project Overview
+                                                   Project Overview
 
 Purpose: The primary purpose of this project is to create a platform where individuals can register and apply for financial government support. 
          It aims to streamline the process of collecting user information, submitting applications, and enabling administrators to efficiently manage and respond to these applications.
@@ -21,7 +21,7 @@ This system is designed to be scalable and secure, ensuring that it can handle a
 The project will also focus on compliance with data protection regulations to maintain user trust and legal standards.
 
 
-                                                Installation Guide
+                                                   Installation Guide
 
 <<Detail the steps required to set up and run the application.
 Include any prerequisites, such as software dependencies or database configurations.
@@ -146,7 +146,7 @@ This schema provides a foundational structure for managing applicants and the au
 
 <<>>
 
-                                                     Class and Method Documentation
+                                                  Class and Method Documentation
 
 The project Applicant tracking system consists of the 10 classes, 2 interfaces:
 
