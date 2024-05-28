@@ -20,10 +20,8 @@ Intended Audience:
 This system is designed to be scalable and secure, ensuring that it can handle a growing number of users and sensitive data with integrity. 
 The project will also focus on compliance with data protection regulations to maintain user trust and legal standards.
 
-<<Provide a brief introduction to the technologies used and the architectural design of the application.>>
 
-
-                                   Installation Guide
+                                    Installation Guide
 
 <<Detail the steps required to set up and run the application.
 Include any prerequisites, such as software dependencies or database configurations.
