@@ -151,7 +151,7 @@ The 11 classes are:
 
   - GovernmentFinancialSupportApplicantion
 
-        the “entry class” of the applicantion. Contains the ‘main’ method.
+        The “entry class” of the applicantion. Contains the ‘main’ method.
 
   - CSVExporter
 
