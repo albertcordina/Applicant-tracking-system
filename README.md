@@ -151,11 +151,11 @@ The 11 classes are:
 
   - GovernmentFinancialSupportApplicantion
 
-      the “entry class” of the applicantion. Contains the ‘main’ method.
+        the “entry class” of the applicantion. Contains the ‘main’ method.
 
   - CSVExporter
 
-      Contains the mthod exportApplicantsToCSV, which helps in saving applicants.CSV file in 'target' folder of the project (see the AdminController class).
+        Contains the mthod exportApplicantsToCSV, which helps in saving applicants.CSV file in 'target' folder of the project (see the AdminController class).
 
 
  the package ‘controller’
