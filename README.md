@@ -145,7 +145,7 @@ This schema provides a foundational structure for managing applicants and the au
 
 The project Applicant tracking system consists of the 10 classes, 2 interfaces:
 
-The 10 classes are:
+The 11 classes are:
 
  the main package of the project
 
@@ -181,7 +181,9 @@ The 10 classes are:
                  manageApplicants – calls findAllApplicants method of the ApplicantService class and get to the manage_applicants.html page
               
             to delete applicant endpoint method @PostMethod:
-                 deleteUser – calls deleteApplicantByUsername of the ApplicantService class and gets to the success_page.html page
+                 deleteUser – calls findEmailByUsername of the ApplicantService class to fetch the applicant's email before deleting the account
+                              calls deleteApplicantByUsername of the ApplicantService class to delete the applicant
+                              calls sendEmail of the EmailService class to send the acknowledgement email to the applicant and gets to the success_page.html page
 
             to find applicant by AGE endpoints methods @GetMapping:
                  findByAgeGet – get to the find_by_age_page.html page
@@ -277,10 +279,17 @@ The 10 classes are:
                           findApplicantByAge –         calls the findByAge method of the ApplicantRepository interface.
                           findApplicantsByOccupation – calls the findByOccupation method of the ApplicantRepository interface.
                           findApplicantByDeletion –    calls the findByDeletionIsTrue method of the ApplicantRepository interface.
+                          findEmailByUsername -        calls the findEmailByUsername of the ApplicantRepository interface.
                           deleteApplicantByUsername –  calls the deleteByUsername method of the AuthorityRepository interface and
                                                         then the deleteByUsername method of the ApplicantRepository interface.
 
-      getTotalNumberOfApplicants – calls the findAll method of the ApplicantRepository and returns the number of elements in the list of the Applicants. 
+      getTotalNumberOfApplicants – calls the findAll method of the ApplicantRepository and returns the number of elements in the list of the Applicants.
+
+- EmailService
+
+     Calls the JavaMailSender which provides a robust and flexible way to integrate email functionality into Spring application.
+       Contains the method sendEmail which calls the SimpleMailMessage class of Spring framework with its methods;
+                              setTo, setSubject setText, and calls the method send of JavaMailSender class
         
 
 The 2 interfaces are:
@@ -292,6 +301,7 @@ The 2 interfaces are:
     Contains the following methods:
           
       existsByUsername, findByUsername, deleteByUsername, findByAge, findByOccupation and findByDeletionIsTrue
+      findEmailByUsername - the method with @Query annotation, which gets the email according to the username of the applicant
 
 
 - AuthorityRepository extends the JpaRepository, i.e.  Spring Data JPA
