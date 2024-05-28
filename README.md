@@ -68,9 +68,10 @@ Installation Steps:
 Provide step-by-step instructions for users to navigate through the application and perform common tasks.
 Include screenshots or diagrams to illustrate key features and workflows.>>
 
-                                     User Guide
+                                                 User Guide
 
-Overview
+Overview:
+
 This guide will help you complete the registration form on our website. Follow the steps below to create your account successfully:
 
 1. Access the Registration page
