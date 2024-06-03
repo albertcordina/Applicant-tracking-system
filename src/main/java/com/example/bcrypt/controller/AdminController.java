@@ -121,12 +121,26 @@ public class AdminController {
         return "update_status";
     }
 
+        /* Update of the status of the application with the triggering of automated email/acknowledgement.
+        This setup ensures that after the status gets amended by the Admin, an email is sent to the Applicant's
+             registered email address confirming the update of the status of their application. */
+
     @GetMapping("/updateStatus")
-    public String updateStatus(@ModelAttribute("username") @Valid Applicants applicants, BindingResult bindingResult) {
+    public String updateStatus(@ModelAttribute("username") @Valid Applicants applicants, String username, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "update_status";
         }
         applicantService.saveApplicant(applicants);
+
+        // Fetch the applicant's email before sending the email
+        String email = applicantService.findEmailByUsername(username);
+
+        // Send the acknowledgement email
+        String subject = "Status update Confirmation";
+        String text = "Dear Applicant,\n\nThe status of your application has been updated." +
+                "\nPlease, visit your account to see the actual status of your application.\n\nBest regards,\nGovernment support Team";
+        emailService.sendEmail(email, subject, text);
+
         return "success_page";
     }
 
