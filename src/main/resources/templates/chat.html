@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Application</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 50px;
+            text-align: center;
+            background-color: green;
+            color: white;
+        }
+        .center { text-align: center; }
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: lightgray;
+            font-weight: bold;
+        }
+        input[type="button"], button {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 3px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        input[type="button"]:hover, button:hover {
+            background-color: darkgreen;
+            color: white;
+        }
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: darkgreen;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .messages {
+            border: 1px solid lightgray;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+        }
+        .message {
+            margin-bottom: 10px;
+        }
+        .message p {
+            margin: 0;
+        }
+        .message .sender {
+            font-weight: bold;
+        }
+        .chat-input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="center">
+
+<p>Hi, <span th:text="${name}"></span> ! Welcome to our Chat</p>
+<p>Please, feel free to write your questions here</p>
+
+<div class="container chat-container">
+    <h3>Chat Application</h3>
+    <hr>
+    <div class="messages" id="messages"></div>
+    <div class="chat-input">
+        <input type="text" id="messageInput" class="form-control" placeholder="Type a message..." />
+        <button class="btn btn-primary mt-2" onclick="sendMessage()">Send</button>
+        <hr>
+        <input type="text" id="supportMessageInput" class="form-control" placeholder="Type a response..." />
+        <button class="btn btn-secondary mt-2" onclick="sendSupportMessage()">Send as Customer Support</button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script>
+    let stompClient = null;
+    const username = 'Your message';
+    const supportName = 'Customer Support';
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        connect();
+    });
+
+    function connect() {
+        const socket = new SockJS('/chat');
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, onConnected, onError);
+    }
+
+    function onConnected() {
+        stompClient.subscribe('/topic/public', onMessageReceived);
+    }
+
+    function onError(error) {
+        console.log('Could not connect to WebSocket server. Please refresh this page to try again!');
+    }
+
+    function sendMessage() {
+        const messageInput = document.getElementById('messageInput');
+        const messageContent = messageInput.value.trim();
+
+        if (messageContent && stompClient) {
+            const chatMessage = {
+                sender: username,
+                message: messageContent,
+                type: 'CHAT'
+            };
+            stompClient.send("/app/chat.send", {}, JSON.stringify(chatMessage));
+            messageInput.value = '';
+        }
+    }
+
+    function sendSupportMessage() {
+        const messageInput = document.getElementById('supportMessageInput');
+        const messageContent = messageInput.value.trim();
+
+        if (messageContent && stompClient) {
+            const chatMessage = {
+                sender: supportName,
+                message: messageContent,
+                type: 'CHAT'
+            };
+            stompClient.send("/app/chat.send", {}, JSON.stringify(chatMessage));
+            messageInput.value = '';
+        }
+    }
+
+    function onMessageReceived(payload) {
+        const message = JSON.parse(payload.body);
+
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+
+        const senderElement = document.createElement('p');
+        senderElement.classList.add('sender');
+        senderElement.textContent = message.sender;
+
+        const textElement = document.createElement('p');
+        textElement.textContent = message.message;
+
+        messageElement.appendChild(senderElement);
+        messageElement.appendChild(textElement);
+
+        const messagesContainer = document.getElementById('messages');
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+</script>
+<br>
+
+<input type="button" onclick="location.href='/account'" value="Back to your account">
+
+</body>
+</html>
 
