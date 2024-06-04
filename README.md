@@ -164,7 +164,7 @@ The 17 classes are:
                     in 'target' folder of the project (see the AdminController class).
 
 
- the package ‘controller’
+ the package ‘controller’ has 5 classes:
   
    - AccountController
 
@@ -178,9 +178,9 @@ The 17 classes are:
                                                     the authentication logic in multiple places.
       
 
-- AdminController
+   - AdminController
  
-      calls the ApplicantService class and contains the initBinder method with @InitBinder annotation, which trims strings for all String fields
+           Calls the ApplicantService class and contains the initBinder method with @InitBinder annotation, which trims strings for all String fields
 
             the endpoint methods @GetMapping:
                  admin- get to the admin.html page
@@ -211,9 +211,9 @@ The 17 classes are:
                  exportToCSVinProject – calls the findAllApplicants method of the ApplicantService class and exports all applicants to CSV file.
 
 
-- ApplicantController
+  - ApplicantController
                
-      Calls the ApplicantService class
+        Calls the ApplicantService class
 
           Contains the endpoint methods @GetMapping:
           home – get to the main_page.html page
@@ -239,11 +239,25 @@ The 17 classes are:
           updateApplicantPage –  for Applicants. It calls the findApplicantByUsername method of the ApplicantService class and gets to the update_form.html page.
           updateApplicant –      calls the saveApplicant method of the ApplicantService class and gets to success_page.html page.
 
+    
+   - ChatController
 
-- RegistrationController
+         Calls the ApplicantRepository interface
+         Contains the @GetMapping endpoint method 'chat' which uses the method 'getCurrentLoggedInUsername' of the AccountController class,
+              and 'findByUsername' method of the ApplicantRepository interface to find the applicant by username taking the applicant to chat.html page.
+     
+                  the @MessaageMapping endpoint method 'sendMessage' handles message sent to the 'chat.send' endpoint which broadcasts the message to the 
+                                       /topic/public destination, and then simply returns the received chat message.
+                  the @MessageMapping endpoint method 'newUser' handles messages sent to the 'chat.newUser' endpoint which broadcasts the message to the
+                                       /topic/public destination, adds the new applicant's username to the WebSocket session attributes,
+                                             and then simpy returns the received chat message. 
 
-      Calls the ApplicantRepository interface and SaveApplicant class. 
-      Contains the initBinder method with @InitBinder annotation, which trims strings for all String fields.
+         
+
+   - RegistrationController
+
+         Calls the ApplicantRepository interface and SaveApplicant class. 
+         Contains the initBinder method with @InitBinder annotation, which trims strings for all String fields.
 
            showRegistrationForm - @GetMapping endpoint method to get to the registration.html page.
            submitRegistration - @PostMapping endpoint method with the following functuions:
