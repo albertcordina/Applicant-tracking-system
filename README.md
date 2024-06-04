@@ -322,6 +322,22 @@ the package ‘service’ has 2 classes:
        Calls the JavaMailSender which provides a robust and flexible way to integrate email functionality into Spring application.
        Contains the method sendEmail which calls the SimpleMailMessage class of Spring framework with its methods;
                               setTo, setSubject setText, and calls the method send of JavaMailSender class
+
+the package 'web' has 2 classes:
+
+  - WebsocketEventListener
+
+                          Calls the
+
+    
+  - WebSocketMessageConfig
+
+                          Implements WebSocketMessageBrokerConfigurer interface.
+                          Contains: the method 'registerStompEndpoints' - adds the endpoint that client will use to connect
+                                                                          to the WebSocket server with SockS fallback options.
+                                   the method 'configureMessageBroker' - sets the application destination prefix for messages
+                                                                       bound for @MessageMapping-annotated methods and inables a simple
+                                                                       in-memory message boker and sets the destination prefix for it.
         
 
 The 2 interfaces are:
