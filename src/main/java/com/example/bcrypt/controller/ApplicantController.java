@@ -34,11 +34,6 @@ public class ApplicantController {
         return "login_page";
     }
 
-    @GetMapping("/applicant")
-    public String applicant() {
-        return "applicant";
-    }
-
     @GetMapping("/news")
     public String news() { return "news";}
 
