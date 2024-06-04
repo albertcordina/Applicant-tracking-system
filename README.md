@@ -148,8 +148,8 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
 
 The 17 classes are:
 
- the main package of the project
-
+ the main package of the project has 2 classes:
+ 
   - GovernmentFinancialSupportApplicantion
 
         The “entry class” of the project. Contains the ‘main’ method.
