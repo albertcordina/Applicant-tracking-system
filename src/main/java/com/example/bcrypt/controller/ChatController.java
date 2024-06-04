@@ -12,15 +12,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-// Annotates this class as a Spring MVC controller, capable of handling web requests
+/* Annotates this class as a Spring MVC controller, capable of handling web requests */
 @Controller
 public class ChatController {
 
-    // Injects the ApplicantRepository bean, which is used for database operations related to applicants
+    /* Injects the ApplicantRepository bean, which is used for database operations related to applicants */
     @Autowired
     ApplicantRepository applicantRepository;
 
-    // Handles GET requests to the /chat endpoint
+    /* Handles GET requests to the /chat endpoint */
     @GetMapping("/chat")
     public String chat(Model model) {
 
@@ -37,21 +37,21 @@ public class ChatController {
         return "chat";
     }
 
-    // Handles messages sent to the /chat.send endpoint
+    /* Handles messages sent to the /chat.send endpoint */
     @MessageMapping("/chat.send")
-    // Broadcasts the message to the /topic/public destination
+    /* Broadcasts the message to the /topic/public destination */
     @SendTo("/topic/public")
     public ChatMessage sendMessage(@Payload final ChatMessage chatMessage) {
         // Simply returns the received chat message
         return chatMessage;
     }
 
-    // Handles messages sent to the /chat.newUser endpoint
+    /* Handles messages sent to the /chat.newUser endpoint */
     @MessageMapping("/chat.newUser")
-    // Broadcasts the message to the /topic/public destination
+    /* Broadcasts the message to the /topic/public destination */
     @SendTo("/topic/public")
     public ChatMessage newUser(@Payload final ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
-        // Adds the new applicants's username to the WebSocket session attributes
+        // Adds the new applicant's username to the WebSocket session attributes
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
         // Simply returns the received chat message
         return chatMessage;
