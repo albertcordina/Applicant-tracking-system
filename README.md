@@ -280,7 +280,10 @@ The 17 classes are:
 
 - ChatMessage
 
-                 Entity class, 
+                 has the @Builder design pattern which allows for a flexible and relible way to construct instances of the class.
+                 It generates the methods for setting the fields and a build() method to create an instance of the ChatMessage class.
+                  Contains the parameters; 'type' of the enum data type of the MessageType class, 'message' and 'sender'.
+                   All the pareamenters have the @Getter of Lombok.
  
 - SaveApplicant
 
