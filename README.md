@@ -63,8 +63,7 @@ Installation Steps:
 
     5. Access the Application- Once the application is running, you can access it via a web browser at http://localhost:8080
 
-
-   << >>                                     
+<>                                    
 
                                                         User Guide
 
