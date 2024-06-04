@@ -148,9 +148,9 @@ This schema provides a foundational structure for managing applicants and the au
 
                                                   Class and Method Documentation
 
-The project Applicant tracking system consists of the 10 classes, 2 interfaces:
+The project Applicant tracking system consists of the 17 classes, 2 interfaces:
 
-The 11 classes are:
+The 17 classes are:
 
  the main package of the project
 
