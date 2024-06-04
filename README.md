@@ -90,10 +90,8 @@ This guide will help you complete the registration form on our website. Follow t
  
          If you encounter any issues or need further assistance, please contact our support 
          team through the “Contact us” page or via email at abcsupport@example.com.
- 
 
-<< Present the database schema used by the application, including tables, relationships, and data types.
-Explain the purpose of each table and its attributes. >> 
+<> 
 
 
                                                       Database Schema
