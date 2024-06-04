@@ -146,7 +146,6 @@ This schema provides a foundational structure for managing applicants and the au
 
 The project Applicant tracking system consists of the 17 classes, 2 interfaces:
 
-The 17 classes are:
 
  the main package of the project has 2 classes:
  
@@ -340,9 +339,8 @@ the package 'web' has 2 classes:
                                                                        in-memory message boker and sets the destination prefix for it.
         
 
-The 2 interfaces are:
 
- the package ‘repo’
+ the package ‘repo’ has 2 interfaces:
 
  - ApplicantRepository extends the JpaRepository, i.e.  Spring Data JPA 
 
