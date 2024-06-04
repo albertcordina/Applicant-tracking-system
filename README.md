@@ -140,8 +140,7 @@ Data Flow
 
 This schema provides a foundational structure for managing applicants and the authorities responsible for processing their applications.
 
-
-<<>>
+<>
 
                                                   Class and Method Documentation
 
