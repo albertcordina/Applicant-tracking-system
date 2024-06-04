@@ -326,7 +326,10 @@ the package 'web' has 2 classes:
 
   - WebsocketEventListener
 
-                          Calls the
+                          Contains: the Logger for logging important events and debugging information,
+                                    the 'SimpMessageSendingOperations' interface which is used for sending messages to a spcific destination,
+                                    the method 'handleWebSocketConnectListener', which logs the new WebSocket connection event,
+                                    the method 'handleWebSocketDisconnectListener', which handles the WebSocket diconection events.
 
     
   - WebSocketMessageConfig
