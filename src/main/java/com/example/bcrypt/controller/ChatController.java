@@ -51,7 +51,7 @@ public class ChatController {
     // Broadcasts the message to the /topic/public destination
     @SendTo("/topic/public")
     public ChatMessage newUser(@Payload final ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
-        // Adds the new user's username to the WebSocket session attributes
+        // Adds the new applicants's username to the WebSocket session attributes
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
         // Simply returns the received chat message
         return chatMessage;
