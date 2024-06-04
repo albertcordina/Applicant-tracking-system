@@ -284,6 +284,11 @@ The 17 classes are:
                  It generates the methods for setting the fields and a build() method to create an instance of the ChatMessage class.
                   Contains the parameters; 'type' of the enum data type of the MessageType class, 'message' and 'sender'.
                    All the pareamenters have the @Getter of Lombok.
+
+- MessageType
+
+                 Enum (short for enumeration) class, data type that enables for a variable to be a set of predefined constrants.
+                 It has the enum constants; CHAT, CONNECT, DISCONNECT.
  
 - SaveApplicant
 
