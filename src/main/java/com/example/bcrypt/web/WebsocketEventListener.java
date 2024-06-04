@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.socket.messaging.SessionConnectedEvent;
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
-// Annotates this class as a Spring component, allowing it to be autodetected through classpath scanning
+/* @Component - a Spring component, allowing it to be autodetected through classpath scanning */
 @Component
 public class WebsocketEventListener {
 
@@ -24,14 +24,15 @@ public class WebsocketEventListener {
     @Autowired
     private SimpMessageSendingOperations sendingOperations;
 
-    // Event listener method that handles new WebSocket connection events
+    /* Event listener method that handles new WebSocket connection events */
     @EventListener
     public void handleWebSocketConnectListener(final SessionConnectedEvent event) {
         // Logs the new WebSocket connection event
         LOGGER.info("Received a new web socket connection");
     }
 
-    // Event listener method that handles WebSocket disconnection events
+
+    /* Event listener method that handles WebSocket disconnection events */
     @EventListener
     public void handleWebSocketDisconnectListener(final SessionDisconnectEvent event) {
         // Retrieves the message headers for the disconnect event
