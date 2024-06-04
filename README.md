@@ -264,7 +264,7 @@ The 17 classes are:
                  sends the Applicant to the registration_confirmation.html page.
 
 
- the package ‘model’:
+ the package ‘model’ has 5 classes:
 
 - Applicants
   
@@ -277,6 +277,10 @@ The 17 classes are:
   
                 Entity class, the same as the Applicants. It has the parameter ‘username’ as the primary key and also as the foreign key of the Applicant’s ‘username’.
                 The parameter ‘authority’ for holding the Role of the Applicant is the second and last parameter of the Authorities class.
+
+- ChatMessage
+
+                 Entity class, 
  
 - SaveApplicant
 
@@ -286,7 +290,7 @@ The 17 classes are:
                  The parameter ‘status’ of the applicants table is set as ‘On the review’ by default.
                  The parameter ‘deletion’ of the applicants table is set as ‘false’ by default.
 
-the package ‘service’
+the package ‘service’ has 2 classes:
 
  - ApplicantService
 
