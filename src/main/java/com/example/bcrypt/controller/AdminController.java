@@ -138,7 +138,7 @@ public class AdminController {
         // Send the acknowledgement email
         String subject = "Status Update Confirmation";
         String text = "Dear Applicant,\n\nThe status of your application has been updated." +
-                "\nPlease, visit your account to see the actual status of your application.\n\nBest regards,\nGovernment support Team";
+                "\nPlease, visit your account to see the actual status of your application.\n\nBest regards,\nYour Government support Team";
         emailService.sendEmail(email, subject, text);
 
         return "success_page";
