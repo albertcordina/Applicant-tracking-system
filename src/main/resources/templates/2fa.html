@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>2FA Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+    <style>
+        body {
+            margin: 50px 800px;
+            text-align: center;
+            background-color: green;
+            color: white;
+        }
+        .msg { color: #ffcc00;}
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: white;
+            font-weight: bold; /* To make the line bold */
+        }
+        /* To set the BUTTONS */
+        input[type="submit"],
+        input[type="button"] {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 3px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: darkgreen;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h2>2FA Page</h2>
+    <hr>
+    <br>
+
+    <form action="#" th:action="@{/verify-2fa}" method="POST">
+
+        <p>
+            Please enter the 2FA code sent to your email:
+        </p>
+
+        <p>
+            <input type="text" name="code"/>
+        </p>
+
+        <br>
+
+        <input type="submit" value="Submit">
+
+        <br><br>
+
+        <input type="button" onclick="location.href='/account'" value="Back to your account">
+
+    </form>
+
+</div>
+</body>
+</html>
