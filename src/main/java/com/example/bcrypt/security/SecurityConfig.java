@@ -3,59 +3,63 @@ package com.example.bcrypt.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.userdetails.UserDetailsService;
+
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
-import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import javax.sql.DataSource;
 
-@Configuration // for configuration of security function.
-public class SecurityConfig {
+/*
+    We centralize our security configuration, making it easier to manage and understand.
+    This approach avoids potential conflicts and ensures all security-related settings are in one place.
+ */
 
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {  // Configuration class for security functionality
 
-    @Bean // for decoding password. Encoding is done by setPassword() method.
-    public PasswordEncoder passwordEncoder() { // for decoding password.
+    // Bean for encoding passwords using BCryptPasswordEncoder
+    @Bean
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean // for communication with database.
-    public UserDetailsManager userDetails(DataSource dataSource) { // for connection with database.
-
+    /* Bean for configuring user details service with JDBC */
+    @Bean
+    public UserDetailsService userDetails(DataSource dataSource) {
+        // Creates a JDBC user details manager
         JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager(dataSource);
-
+        // Sets the SQL query to retrieve users by username
         userDetailsManager.setUsersByUsernameQuery("select username, password, enabled from applicants where username=?");
+        // Sets the SQL query to retrieve user authorities by username
         userDetailsManager.setAuthoritiesByUsernameQuery("select username, authority from authorities where username=?");
-
+        // Returns the configured user details manager
         return userDetailsManager;
     }
 
+    /* Bean for configuring security filter chain */
     @Bean
     public SecurityFilterChain filter(HttpSecurity http) throws Exception {
-
+        // Configures authorization rules for HTTP requests
         http.authorizeHttpRequests(config -> config
-
-                        .requestMatchers("/").permitAll()
-                        .requestMatchers("/home").permitAll()
-                        .requestMatchers("/form").permitAll() // endpoint '/form' is for the registration.
-                        .requestMatchers("/confirmation").permitAll()
-                        .requestMatchers("/submitData").permitAll()
-                        .requestMatchers("/about_us").permitAll()
-                        .requestMatchers("/applicantsByAge").permitAll()
-
-                        .anyRequest().authenticated() // for login and logout not need to be authenticated.
-
+                        .requestMatchers("/", "/home", "/form", "/confirmation", "/submitData", "/about_us", "/applicantsByAge").permitAll()
+                        .requestMatchers("/2fa", "/verify-2fa", "/login").permitAll()
+                        .anyRequest().authenticated()
                 )
-
-                .formLogin(form -> form.loginPage("/login")
+                // Configures form-based authentication
+                .formLogin(form -> form
+                        .loginPage("/login")
                         .loginProcessingUrl("/authenticate")
-                        .defaultSuccessUrl("/account", true) // Redirect to account page upon successful login.
+                        .defaultSuccessUrl("/account", true)  // Redirect to account page upon successful login.
                         .permitAll()
                 )
-                .logout(logout -> logout.permitAll()
-                );
-        
+                // Configures logout functionality
+                .logout(logout -> logout.permitAll());
+
         return http.build();
     }
 }
