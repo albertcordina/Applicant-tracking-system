@@ -215,7 +215,7 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
                                                                                   and gets to the success_page.html page.
 
                              export the list of the applicants to CSV file method:
-                   exportToCSVinProject – calls the findAllApplicants method of the ApplicantService class and exports all applicants to CSV file.
+                 exportToCSVinProject – calls the findAllApplicants method of the ApplicantService class and exports all applicants to CSV file.
 
 
   - ApplicantController
