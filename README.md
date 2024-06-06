@@ -286,7 +286,8 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
 
 - Authorities
   
-                Entity class, the same as the Applicants. It has the parameter ‘username’ as the primary key and also as the foreign key of the Applicant’s ‘username’.
+                Entity class, the same as the Applicants. It has the parameter ‘username’ as
+                     the primary key and also as the foreign key of the Applicant’s ‘username’.
                 The parameter ‘authority’ for holding the Role of the Applicant is the second and last parameter of the Authorities class.
 
 - ChatMessage
@@ -308,6 +309,22 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
                  The parameter ‘authority’ of the authorities table is set as ‘ROLE_APPLICANT’ by default.
                  The parameter ‘status’ of the applicants table is set as ‘On the review’ by default.
                  The parameter ‘deletion’ of the applicants table is set as ‘false’ by default.
+
+the package ‘security’ has 1 class:
+
+ - SecurityConfig
+
+         Calls the PasswordEncoder interfaces of the Security Spring Boot for encoding password.
+         Contains the methods:
+             applicantsDetails - creates a JDBC applicant details manager,
+                                 sets the SQL query to retrieve applicants by username,
+                                 sets the SQL query to retrieve applicant authorities by username,
+                                 returns the configured applicant details manager.
+
+             filter -            configures authorization rules for HTTP requests,
+                                 configures form-based authentication,
+                                 configures logout functionality.
+   
 
 the package ‘service’ has 2 classes:
 
