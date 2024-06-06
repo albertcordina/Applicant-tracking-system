@@ -177,33 +177,39 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
  
            Calls the ApplicantService class and contains the initBinder method with @InitBinder annotation, which trims strings for all String fields
 
-            the endpoint methods @GetMapping:
-                 admin- get to the admin.html page
-                 about_us –  get to the about_us.html page
+            The @GetMapping endpoint methods:
+     
+                 admin -    get to the admin.html page
+                 aboutUs –  get to the about_us.html page
                  manageApplicants – calls findAllApplicants method of the ApplicantService class and get to the manage_applicants.html page
-              
-            to delete applicant endpoint method @PostMethod:
+
+                             find applicant by AGE methods:
+                 findByAgePage   – get to the find_by_age_page.html page
+                 findByAgeResult – calls findApplicantByAge method of the ApplicantService class and gets to the result_by_age_page.html page
+
+                             find applicant by Occupation methods:
+                 findByOccupationPage   – get to the find_by_occupation_page.html page
+                 findByOccupationResult – calls findApplicantByOccupation method of the ApplicantService class
+                                                           and gets to the result_by_occupation_page.html page
+
+                             find the total number of the applicants method:
+                 totalNumberOfApplicants – calls getTotalNumberOfApplicants method of the ApplicantService class and gets to the total_number_page.html page
+
+                             update the status of the application methods:
+                 updateStatusPage   – calls findApplicantByUsername method of the ApplicantService class and gets to the update_status.html page.
+                 updateStatusResult – calls saveApplicant method of the ApplicantService class and gets to the success_page.html page.
+
+
+            The @PostMapping endpoint methods:
+     
+                             delete applicant method:
                  deleteUser – calls findEmailByUsername of the ApplicantService class to fetch the applicant's email before deleting the account
                               calls deleteApplicantByUsername of the ApplicantService class to delete the applicant
-                              calls sendEmail of the EmailService class to send the acknowledgement email to the applicant and gets to the success_page.html page
+                              calls sendEmail of the EmailService class to send the acknowledgement email to the applicant
+                                                                                  and gets to the success_page.html page.
 
-            to find applicant by AGE endpoints methods @GetMapping:
-                 findByAgeGet – get to the find_by_age_page.html page
-                 findByAgePost – calls findApplicantByAge method of the ApplicantService class and gets to the result_by_age_page.html page
-
-            to find applicant by Occupation endpoints methods @GetMapping:
-                 findByOccupationPage – get to the find_by_occupation_page.html page
-                 findByOccupation – calls findApplicantByOccupation method of the ApplicantService class and gets to the result_by_occupation_page.html page
-
-            to find the total number of the applicants endpoint method @GetMapping:
-                 totalNumber – calls getTotalNumberOfApplicants method of the ApplicantService class and gets to the total_number_page.html page
-
-            to update the status of the application endpoint methods @GetMapping:
-                 updateStatusPage – calls findApplicantByUsername method of the ApplicantService class and gets to the update_status.html page.
-                 updateStatus – calls saveApplicant method of the ApplicantService class and gets to the success_page.html page.
-
-            to export the list of the users to CSV file endpoint method @PostMapping:
-                 exportToCSVinProject – calls the findAllApplicants method of the ApplicantService class and exports all applicants to CSV file.
+                             export the list of the applicants to CSV file method:
+                   exportToCSVinProject – calls the findAllApplicants method of the ApplicantService class and exports all applicants to CSV file.
 
 
   - ApplicantController
