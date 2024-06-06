@@ -45,15 +45,4 @@ public class ChatController {
         // Simply returns the received chat message
         return chatMessage;
     }
-
-    /* Handles messages sent to the /chat.newUser endpoint */
-    @MessageMapping("/chat.newUser")
-    /* Broadcasts the message to the /topic/public destination */
-    @SendTo("/topic/public")
-    public ChatMessage newUser(@Payload final ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
-        // Adds the new applicant's username to the WebSocket session attributes
-        headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
-        // Simply returns the received chat message
-        return chatMessage;
-    }
 }
