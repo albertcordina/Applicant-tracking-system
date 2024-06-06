@@ -224,11 +224,11 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
 
           Contains the endpoint methods @GetMapping:
     
-              home – get to the main_page.html page
+              home –         get to the main_page.html page
               registration – get to the registration.html page
-              login – get to the login_page.html page
-              applicant – get to the applicant.html page
-              news -get to the news.html page
+              login –        get to the login_page.html page
+              applicant –    get to the applicant.html page
+              news -         get to the news.html page
    
           Applicant’s deletion request:
 
