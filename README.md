@@ -223,28 +223,30 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
         Calls the ApplicantService class
 
           Contains the endpoint methods @GetMapping:
-          home – get to the main_page.html page
-          registration – get to the registration.html page
-          login – get to the login_page.html page
-          applicant – get to the applicant.html page
-          news -get to the news.html page
+    
+              home – get to the main_page.html page
+              registration – get to the registration.html page
+              login – get to the login_page.html page
+              applicant – get to the applicant.html page
+              news -get to the news.html page
    
           Applicant’s deletion request:
 
-          showApplicantsDeletionRequest - for Admin review. It calls findApplicantsByDeletion method of the
+              showApplicantsDeletionRequest - for Admin review. It calls findApplicantsByDeletion method of the
                                           ApplicantService class and gets to the account_removal_list.html page.
 
-          removeAccountRequestGetPage –   for Applicant to send the request. It calls findApplicantByUsername mehtod of
+              removeAccountRequestGetPage –   for Applicant to send the request. It calls findApplicantByUsername mehtod of
                                           the ApplicantService class and gets the Applicant to the account_removal_request.html page.
 
-          removalAccountRequestSend –     sends the Applicant’s request, i.e. calls the saveApplicant method of the ApplicantService
+              removalAccountRequestSend –     sends the Applicant’s request, i.e. calls the saveApplicant method of the ApplicantService
                                           class and changes the boolean deletion to true, then gets to the success_page.html page.
 
 
           Update the Applicant’s data:
 
-          updateApplicantPage –  for Applicants. It calls the findApplicantByUsername method of the ApplicantService class and gets to the update_form.html page.
-          updateApplicant –      calls the saveApplicant method of the ApplicantService class and gets to success_page.html page.
+              updateApplicantPage –  for Applicants. It calls the findApplicantByUsername method
+                                     of the ApplicantService class and gets to the update_form.html page.
+              updateApplicant –      calls the saveApplicant method of the ApplicantService class and gets to success_page.html page.
 
     
    - ChatController
