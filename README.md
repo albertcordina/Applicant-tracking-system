@@ -165,11 +165,17 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
 
          Calls the ApplicantRepository interface
 
-         the endpoint methods @GetMapping:
-           showAccountPage – calls the getCurrentLogedInUsername method and findByUsername to find user with its data by username.
-           showManageAccountPage – shows the data of the Applicant (accessed from the applicant’s account)
-            
-         the method getCurrentLoggedInUsername – is retriving the username of the currently authenticated user without duplicating
+         The @GetMapping endpoint methods:
+     
+            showAccountPage – calls the getCurrentLogedInUsername method and findByUsername to find user with its data by username
+            showManageAccountPage – shows the data of the Applicant (accessed from the applicant’s account)
+            show2faPage -    displays the 2FA page and sends a 2FA code to the user's email.
+
+         The @PostMapping endpoint method:
+             verify2fa - verifies the 2FA code submitted by the applicant.
+
+          the method generate2faCode - generates a random 6-digit 2FA code.
+          the method getCurrentLoggedInUsername – is retriving the username of the currently authenticated user without duplicating
                                                     the authentication logic in multiple places.
       
 
