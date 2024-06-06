@@ -255,9 +255,6 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
      
                   the @MessaageMapping endpoint method 'sendMessage' handles message sent to the 'chat.send' endpoint which broadcasts the message to the 
                                        /topic/public destination, and then simply returns the received chat message.
-                  the @MessageMapping endpoint method 'newUser' handles messages sent to the 'chat.newUser' endpoint which broadcasts the message to the
-                                       /topic/public destination, adds the new applicant's username to the WebSocket session attributes,
-                                             and then simpy returns the received chat message. 
 
          
 
