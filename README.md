@@ -265,11 +265,12 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
 
            showRegistrationForm - @GetMapping endpoint method to get to the registration.html page.
            submitRegistration - @PostMapping endpoint method with the following functuions:
-                 calls the existsByUsername method of the ApplicantRepository interface 
-                 hash the password using Bcrypt before saving
-                 calls the saveApplicant method of the SaveApplicant class
-                 if the applicant is the age for retirement, i.e. > 67, AND did not register the occupation as retired- sends the Applicant to the retired_page.html page 
-                 sends the Applicant to the registration_confirmation.html page.
+                -  calls the existsByUsername method of the ApplicantRepository interface 
+                -  hash the password using Bcrypt before saving
+                -  calls the saveApplicant method of the SaveApplicant class
+                 if the applicant is the age for retirement, i.e. > 67, AND did not register the occupation as retired-
+                                                                      sends the Applicant to the retired_page.html page 
+                 - sends the Applicant to the registration_confirmation.html page.
 
 
  the package ‘model’ has 5 classes:
