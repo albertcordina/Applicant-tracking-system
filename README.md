@@ -174,9 +174,9 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
          The @PostMapping endpoint method:
              verify2fa - verifies the 2FA code submitted by the applicant.
 
-          the method generate2faCode - generates a random 6-digit 2FA code.
-          the method getCurrentLoggedInUsername – is retriving the username of the currently authenticated user without duplicating
-                                                    the authentication logic in multiple places.
+             the method generate2faCode - generates a random 6-digit 2FA code.
+             the method getCurrentLoggedInUsername – is retriving the username of the currently authenticated user
+                                                     without duplicating the authentication logic in multiple places.
       
 
    - AdminController
