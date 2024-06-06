@@ -28,16 +28,16 @@ public class SecurityConfig {  // Configuration class for security functionality
         return new BCryptPasswordEncoder();
     }
 
-    /* Bean for configuring user details service with JDBC */
+    /* Bean for configuring applicant details service with JDBC */
     @Bean
-    public UserDetailsService userDetails(DataSource dataSource) {
-        // Creates a JDBC user details manager
+    public UserDetailsService applicantsDetails(DataSource dataSource) {
+        // Creates a JDBC applicants details manager
         JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager(dataSource);
-        // Sets the SQL query to retrieve users by username
+        // Sets the SQL query to retrieve applicants by username
         userDetailsManager.setUsersByUsernameQuery("select username, password, enabled from applicants where username=?");
-        // Sets the SQL query to retrieve user authorities by username
+        // Sets the SQL query to retrieve applicant authorities by username
         userDetailsManager.setAuthoritiesByUsernameQuery("select username, authority from authorities where username=?");
-        // Returns the configured user details manager
+        // Returns the configured applicant details manager
         return userDetailsManager;
     }
 
