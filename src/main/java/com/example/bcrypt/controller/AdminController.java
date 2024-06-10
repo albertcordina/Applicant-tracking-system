@@ -147,7 +147,7 @@ public class AdminController {
     //---------------------- Exporting the List of the Applicants to CSV file ---------------------------
 
     @PostMapping("/export")
-    public String exportToCSVinProject(Model model) { // saving applicants.CSV file in 'target' folder of the project.
+    public String exportToCSVinProject(Model model) { // saving applicants.CSV file within the project.
         try {
             List<Applicants> applicants = applicantService.findAllApplicants();
             // Define the file path within the project folder.
