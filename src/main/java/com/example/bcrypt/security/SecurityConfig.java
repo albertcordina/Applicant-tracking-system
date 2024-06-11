@@ -33,7 +33,7 @@ public class SecurityConfig {  // Configuration class for security functionality
     public UserDetailsService applicantsDetails(DataSource dataSource) {
         // Creates a JDBC applicants details manager
         JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager(dataSource);
-        // Sets the SQL query to retrieve applicants by username
+        // Sets the SQL query to retrieve applicant by username
         userDetailsManager.setUsersByUsernameQuery("select username, password, enabled from applicants where username=?");
         // Sets the SQL query to retrieve applicant authorities by username
         userDetailsManager.setAuthoritiesByUsernameQuery("select username, authority from authorities where username=?");
@@ -48,6 +48,7 @@ public class SecurityConfig {  // Configuration class for security functionality
         http.authorizeHttpRequests(config -> config
                         .requestMatchers("/", "/home", "/form", "/confirmation", "/submitData", "/about_us", "/applicantsByAge").permitAll()
                         .requestMatchers("/2fa", "/verify-2fa", "/login").permitAll()
+                        .requestMatchers("/*.png").permitAll()
                         .anyRequest().authenticated()
                 )
                 // Configures form-based authentication
