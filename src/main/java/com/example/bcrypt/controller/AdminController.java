@@ -58,7 +58,7 @@ public class AdminController {
              registered email address confirming the deletion of their account. */
 
     @PostMapping("/deleteApplicant")
-    public String deleteUser(@RequestParam("username") String username) {
+    public String deleteApplicantAcknowledgement(@RequestParam("username") String username) {
         // Fetch the applicant's email before deleting
         String email = applicantService.findEmailByUsername(username);
 
@@ -75,12 +75,12 @@ public class AdminController {
     //------------------------------ find Applicant by AGE -----------------------------------
 
     @GetMapping("/findByAgeGet")
-    public String findByAgeGet() {
+    public String findByAgePage() {
         return "find_by_age_page";
     }
 
     @GetMapping("/applicantsByAge")
-    public String findByAgePost(@RequestParam("age") Integer age, Model model) {
+    public String findByAgeResult(@RequestParam("age") Integer age, Model model) {
         List<Applicants> applicants = applicantService.findApplicantByAge(age);
         if (applicants.isEmpty()) {
             return "not_found_page";
@@ -96,7 +96,7 @@ public class AdminController {
     }
 
     @GetMapping("/findByOccupationResult")
-    public String findByOccupation(@RequestParam("occupation") String occupation, Model model) {
+    public String findByOccupationResult(@RequestParam("occupation") String occupation, Model model) {
         List<Applicants> applicants = applicantService.findApplicantByOccupation(occupation);
         if (applicants.isEmpty()) {
             return "not_found_page";
@@ -107,7 +107,7 @@ public class AdminController {
     //------------------------------ find Total number of Applicants -----------------------------------
 
     @GetMapping("/totalNumberOfApplicants")
-    public String totalNumber(Model model) {
+    public String totalNumberOfApplicants(Model model) {
         int totalNumberOfApplicants = (applicantService.getTotalNumberOfApplicants()) - 1;
         model.addAttribute("totalNumberOfApplicants", totalNumberOfApplicants);
         return "total_number_page";
@@ -126,7 +126,7 @@ public class AdminController {
              registered email address confirming the update of the status of their application. */
 
     @GetMapping("/updateStatus")
-    public String updateStatus(@ModelAttribute("username") @Valid Applicants applicants, String username, BindingResult bindingResult) {
+    public String updateStatusResult(@ModelAttribute("username") @Valid Applicants applicants, String username, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "update_status";
         }
