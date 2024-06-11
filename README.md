@@ -248,9 +248,10 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
 
           Update the Applicant’s data:
 
-              updateApplicantPage –  for Applicants. It calls the findApplicantByUsername method
-                                     of the ApplicantService class and gets to the update_form.html page.
-              updateApplicant –      calls the saveApplicant method of the ApplicantService class and gets to success_page.html page.
+                   updateApplicantPage –      for Applicants. It calls the findApplicantByUsername method of
+                                              the ApplicantService class and gets to the update_form.html page.
+                       updateApplicant –      calls the saveApplicant method of the ApplicantService class and
+                                               gets to success_page.html page.
 
     
    - ChatController
