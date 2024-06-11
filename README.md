@@ -232,14 +232,16 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
    
           Applicant’s deletion request:
 
-              showApplicantsDeletionRequest - for Admin review. It calls findApplicantsByDeletion method of the
-                                          ApplicantService class and gets to the account_removal_list.html page.
-
-              removeAccountRequestGetPage –   for Applicant to send the request. It calls findApplicantByUsername mehtod of
+              removeAccountRequestGetPage –    for Applicant to send the request. It calls findApplicantByUsername mehtod of
                                           the ApplicantService class and gets the Applicant to the account_removal_request.html page.
 
-              removalAccountRequestSend –     sends the Applicant’s request, i.e. calls the saveApplicant method of the ApplicantService
+               removalAccountRequestSend –     sends the Applicant’s request, i.e. calls the saveApplicant method of the ApplicantService
                                           class and changes the boolean deletion to true, then gets to the success_page.html page.
+
+           showApplicantsDeletionRequest -    for Admin review. It calls findApplicantsByDeletion method of the
+                                          ApplicantService class and gets to the account_removal_list.html page.
+
+           removeAccountDeletionRequest -  removal of the account deletion request managed by the admin. Set to 'false' the 'deletion' boolean.
 
 
           Update the Applicant’s data:
