@@ -187,14 +187,13 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
      
                  admin -    get to the admin.html page
                  aboutUs –  get to the about_us.html page
-                 manageApplicants – calls findAllApplicants method of the ApplicantService class and get to the manage_applicants.html page
+                 manageApplicants – callst getTotalNumberOfApplicants method of the ApplicantService class,
+                                    calls findAllApplicants method of the ApplicantService class and get to the manage_applicants.html page
 
-                             find applicant by AGE methods:
-                 findByAgePage   – get to the find_by_age_page.html page
+                             find applicant by AGE method:
                  findByAgeResult – calls findApplicantByAge method of the ApplicantService class and gets to the result_by_age_page.html page
 
-                             find applicant by Occupation methods:
-                 findByOccupationPage   – get to the find_by_occupation_page.html page
+                             find applicant by Occupation method:
                  findByOccupationResult – calls findApplicantByOccupation method of the ApplicantService class
                                                            and gets to the result_by_occupation_page.html page
 
