@@ -197,9 +197,6 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
                  findByOccupationResult – calls findApplicantByOccupation method of the ApplicantService class
                                                            and gets to the result_by_occupation_page.html page
 
-                             find the total number of the applicants method:
-                 totalNumberOfApplicants – calls getTotalNumberOfApplicants method of the ApplicantService class and gets to the total_number_page.html page
-
                              update the status of the application methods:
                  updateStatusPage   – calls findApplicantByUsername method of the ApplicantService class and gets to the update_status.html page.
                  updateStatusResult – calls saveApplicant method of the ApplicantService class and gets to the success_page.html page.
