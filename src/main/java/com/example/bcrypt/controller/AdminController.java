@@ -48,7 +48,11 @@ public class AdminController {
     }
 
     @GetMapping("/manageApplicants")
-    public String manageApplicants(Model model) {
+    public String manageApplicants(Model model) { // find All and Total number of Applicants.
+
+        int totalNumberOfApplicants = (applicantService.getTotalNumberOfApplicants()) - 1;
+        model.addAttribute("totalNumberOfApplicants", totalNumberOfApplicants);
+
         model.addAttribute("applicants", applicantService.findAllApplicants());
         return "manage_applicants";
     }
@@ -74,11 +78,6 @@ public class AdminController {
     }
     //------------------------------ find Applicant by AGE -----------------------------------
 
-    @GetMapping("/findByAgeGet")
-    public String findByAgePage() {
-        return "find_by_age_page";
-    }
-
     @GetMapping("/applicantsByAge")
     public String findByAgeResult(@RequestParam("age") Integer age, Model model) {
         List<Applicants> applicants = applicantService.findApplicantByAge(age);
@@ -90,11 +89,6 @@ public class AdminController {
     }
     //------------------------------ find Applicant by Occupation -----------------------------------
 
-    @GetMapping("/findByOccupationPage")
-    public String findByOccupationPage() {
-        return "find_by_occupation_page";
-    }
-
     @GetMapping("/findByOccupationResult")
     public String findByOccupationResult(@RequestParam("occupation") String occupation, Model model) {
         List<Applicants> applicants = applicantService.findApplicantByOccupation(occupation);
@@ -103,14 +97,6 @@ public class AdminController {
         }
         model.addAttribute("applicants", applicants);
         return "result_by_occupation_page";
-    }
-    //------------------------------ find Total number of Applicants -----------------------------------
-
-    @GetMapping("/totalNumberOfApplicants")
-    public String totalNumberOfApplicants(Model model) {
-        int totalNumberOfApplicants = (applicantService.getTotalNumberOfApplicants()) - 1;
-        model.addAttribute("totalNumberOfApplicants", totalNumberOfApplicants);
-        return "total_number_page";
     }
     //------------------------------ update the Status of the Application ---------------------------------
 
