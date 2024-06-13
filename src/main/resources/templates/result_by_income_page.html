@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Applicant's Details by Income</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 50px 100px;
+            text-align: center;
+            background-color: green;
+            color: white;
+        }
+        .white { color: white; }
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: darkgray;
+            margin: 0 auto;
+            width: 70%;
+        }
+        button[type="submit"],
+        input[type="button"] {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        button[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: darkgreen;
+            color: white;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: green;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .sticky-header-second {
+            position: sticky;
+            top: 50px;
+            background-color: green;
+            padding: 10px 0;
+            z-index: 999;
+        }
+        .form-inline .form-group {
+            margin: 10px;
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            text-decoration: none;
+        }
+        .scroll-to-top:hover {
+            background-color: white;
+            color: darkgreen;
+            border: 1px solid darkgreen;
+        }
+    </style>
+</head>
+<body>
+<div class="container white">
+    <div class="sticky-header">
+        <h3 th:if="${income != null}">
+            List of the Applicants with Income <span th:text="${income}"></span>
+        </h3>
+        <h3 th:if="${minIncome != null and maxIncome != null}">
+            List of the Applicants with Income between <span th:text="${minIncome}"></span> and <span th:text="${maxIncome}"></span>
+        </h3>
+        <h3 th:unless="${income != null or (minIncome != null and maxIncome != null)}">
+            List of the Applicants by Income
+        </h3>
+        <hr>
+    </div>
 
+    <div class="sticky-header-second">
+        <input type="button" onclick="location.href='/manageApplicants'" value="Back to the Applicant's List">
+    </div>
+
+    <br>
+    <div class="container">
+        <div>
+            <table class="table table-dark table-bordered table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Age</th>
+                    <th>Income</th>
+                    <th>Occupation</th>
+                    <th>Email</th>
+                    <th>Comments</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Iterate over applicants and display them in rows -->
+                <th:block th:each="applicant : ${applicants}">
+                    <tr>
+                        <td th:text="${applicant.username}"></td>
+                        <td th:text="${applicant.name}"></td>
+                        <td th:text="${applicant.surname}"></td>
+                        <td th:text="${applicant.age}"></td>
+                        <td th:text="${applicant.income}"></td>
+                        <td th:text="${applicant.occupation}"></td>
+                        <td th:text="${applicant.email}"></td>
+                        <td th:text="${applicant.comments}"></td>
+                        <td th:text="${applicant.status}"></td>
+                        <td>
+                            <!-- Update form -->
+                            <form th:action="@{/updateStatusGetPage}" method="GET" style="display: inline-block; margin: 5px;">
+                                <input type="hidden" name="username" th:value="${applicant.username}">
+                                <button type="submit" class="btn btn-primary">Update Status</button>
+                            </form>
+                            <!-- Delete form -->
+                            <form th:action="@{/deleteApplicant}" method="POST" style="display: inline-block; margin: 5px;">
+                                <input type="hidden" name="username" th:value="${applicant.username}">
+                                <button type="submit" class="btn btn-danger">Delete Account</button>
+                            </form>
+                        </td>
+                    </tr>
+                </th:block>
+                </tbody>
+            </table>
+        </div>
+        <br>
+    </div>
+</div>
+
+<!-- Scroll to Top Button -->
+<a href="#" class="scroll-to-top">↑ Top</a>
+
+</body>
+</html>
