@@ -80,6 +80,8 @@ public class AdminController {
 
     @GetMapping("/applicantsByAge")
     public String findByAgeResult(@RequestParam(value = "age", required = false) Integer age,
+                                  /* 'required = false' attribute is used in the @RequestParam annotation to indicate that the parameters are optional.
+                                             This means that the user can provide these parameters, but they are not required to. */
                                   @RequestParam(value = "minAge", required = false) Integer minAge,
                                   @RequestParam(value = "maxAge", required = false) Integer maxAge,
                                   Model model) {
@@ -108,6 +110,8 @@ public class AdminController {
 
     @GetMapping("/applicantsByIncome")
     public String findByIncomeResult(@RequestParam(value = "income", required = false) Double income,
+                                     /* 'required = false' attribute is used in the @RequestParam annotation to indicate that the parameters are optional.
+                                                              This means that the user can provide these parameters, but they are not required to. */
                                      @RequestParam(value = "minIncome", required = false) Double minIncome,
                                      @RequestParam(value = "maxIncome", required = false) Double maxIncome,
                                      Model model) {
