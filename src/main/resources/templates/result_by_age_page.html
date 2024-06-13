@@ -75,8 +75,15 @@
 <body>
 <div class="container white">
     <div class="sticky-header">
-        <h3 th:if="${applicants.size() > 0}">List of the Applicants as <span th:text="${applicants[0].age}"></span> years old</h3>
-        <h3 th:unless="${applicants.size() > 0}">List of the Applicants</h3>
+        <h3 th:if="${age != null}">
+          List of the Applicants who are <span th:text="${age}"></span> years old
+         </h3>
+         <h3 th:if="${minAge != null && maxAge != null}">
+          List of the Applicants between <span th:text="${minAge}"></span> and <span th:text="${maxAge}"></span> years old
+         </h3>
+        <h3 th:unless="${age != null or (minAge != null and maxAge != null)}">
+            List of the Applicants by Income
+        </h3>
         <hr>
     </div>
 
