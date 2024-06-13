@@ -15,7 +15,10 @@ public interface ApplicantRepository extends JpaRepository<Applicants, String> {
     boolean existsByUsername(String username);
     Applicants findByUsername(String username);
     void deleteByUsername(String username);
-    List<Applicants> findByAge (int age);
+    List<Applicants> findByAge (Integer age);
+    List<Applicants> findByAgeBetween(Integer minAge, Integer maxAge);
+    List<Applicants> findByIncome(Double income);
+    List<Applicants> findByIncomeBetween(Double minIncome, Double maxIncome);
     List<Applicants> findByOccupation (String occupation);
     List<Applicants> findByDeletionIsTrue();
 
