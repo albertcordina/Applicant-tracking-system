@@ -74,6 +74,7 @@
 </head>
 <body>
 <div class="container white">
+
     <div class="sticky-header">
         <h3>Applicants List & Operations</h3>
         <hr>
@@ -92,13 +93,31 @@
             <button type="submit">Export the Applicants to CSV file</button>
         </form>
     </div>
-<br>
-    <h5>Statistics</h5>
+    <br>
+
+    <h5>Filter Applicants</h5>
 
     <div class="form-inline justify-content-center">
+
         <form action="/applicantsByAge" method="GET" class="form-group">
-            <label for="age">Applicants by Age:</label>
-            <input type="number" min="18" id="age" name="age" required>
+            <label for="age">Exact Age:</label>
+            <input type="number" min="18" id="age" name="age">
+            <br>
+            <label for="minAge">Age Range:</label>
+            <input type="number" min="18" id="minAge" name="minAge" placeholder="Min Age">
+            <input type="number" min="18" id="maxAge" name="maxAge" placeholder="Max Age">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action="/applicantsByIncome" method="GET" class="form-group">
+            <label for="income">Exact Income:</label>
+            <input type="number" min="1" id="income" name="income">
+            <br>
+            <label for="minIncome">Income Range:</label>
+            <input type="number" min="1" id="minIncome" name="minIncome" placeholder="Min Income">
+            <input type="number" min="1" id="maxIncome" name="maxIncome" placeholder="Max Income">
+            <br>
             <button type="submit">Submit</button>
         </form>
 
@@ -122,6 +141,7 @@
             </div>
             <button type="submit">Submit</button>
         </form>
+
     </div>
 
     <p>Total number of the Applicants: <span th:text="${totalNumberOfApplicants}"></span></p>
@@ -133,7 +153,8 @@
     <br>
     <div style="margin: 5px 0">
         <table class="table table-dark table-bordered table-hover">
-            <thead>
+
+            <thead >
             <tr>
                 <th>Username</th>
                 <th>Name</th>
@@ -147,6 +168,7 @@
                 <th>Actions</th>
             </tr>
             </thead>
+
             <tbody>
             <!-- Iterate over applicants and display them in rows -->
             <tr th:each="applicant : ${applicants}">
