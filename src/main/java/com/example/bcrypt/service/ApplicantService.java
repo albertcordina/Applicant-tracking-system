@@ -26,9 +26,17 @@ public class ApplicantService {
 
     public List<Applicants> findApplicantByAge (Integer age){ return applicantRepository.findByAge(age);}
 
+    public List<Applicants> findApplicantsByAgeRange(Integer minAge, Integer maxAge) {return applicantRepository.findByAgeBetween(minAge, maxAge);}
+
+    public List<Applicants> findApplicantsByIncome(Double income) {return applicantRepository.findByIncome(income);}
+
+    public List<Applicants> findApplicantsByIncomeRange(Double minIncome, Double maxIncome) {return applicantRepository.findByIncomeBetween(minIncome, maxIncome);}
+
     public List<Applicants> findApplicantByOccupation (String occ){ return applicantRepository.findByOccupation(occ);}
 
-    public List<Applicants> findApplicantsByDeletion() { return applicantRepository.findByDeletionIsTrue();}
+    public List<Applicants> findApplicantsByDeletion() {
+        return applicantRepository.findByDeletionIsTrue();
+    }
 
     public String findEmailByUsername(String username) { return applicantRepository.findEmailByUsername(username); }
 
