@@ -79,14 +79,58 @@ public class AdminController {
     //------------------------------ find Applicant by AGE -----------------------------------
 
     @GetMapping("/applicantsByAge")
-    public String findByAgeResult(@RequestParam("age") Integer age, Model model) {
-        List<Applicants> applicants = applicantService.findApplicantByAge(age);
+    public String findByAgeResult(@RequestParam(value = "age", required = false) Integer age,
+                                  @RequestParam(value = "minAge", required = false) Integer minAge,
+                                  @RequestParam(value = "maxAge", required = false) Integer maxAge,
+                                  Model model) {
+        List<Applicants> applicants;
+
+        if (age != null) {
+            applicants = applicantService.findApplicantByAge(age);
+            model.addAttribute("age", age); // Add AGE to model.
+
+        } else if (minAge != null && maxAge != null) {
+            applicants = applicantService.findApplicantsByAgeRange(minAge, maxAge);
+            model.addAttribute("minAge", minAge);
+            model.addAttribute("maxAge", maxAge);
+        } else {
+            return "not_found_page";
+        }
+
         if (applicants.isEmpty()) {
             return "not_found_page";
         }
+
         model.addAttribute("applicants", applicants);
         return "result_by_age_page";
     }
+    //------------------------------ find Applicant by Income -----------------------------------
+
+    @GetMapping("/applicantsByIncome")
+    public String findByIncomeResult(@RequestParam(value = "income", required = false) Double income,
+                                     @RequestParam(value = "minIncome", required = false) Double minIncome,
+                                     @RequestParam(value = "maxIncome", required = false) Double maxIncome,
+                                     Model model) {
+        List<Applicants> applicants;
+
+        if (income != null) {
+            applicants = applicantService.findApplicantsByIncome(income);
+            model.addAttribute("income", income); // Add income to model.
+        } else if (minIncome != null && maxIncome != null) {
+            applicants = applicantService.findApplicantsByIncomeRange(minIncome, maxIncome);
+            model.addAttribute("minIncome", minIncome); // Add minIncome to model.
+            model.addAttribute("maxIncome", maxIncome); // Add maxIncome to model.
+        } else {
+            return "not_found_page";
+        }
+        if (applicants.isEmpty()) {
+            return "not_found_page";
+        }
+
+        model.addAttribute("applicants", applicants);
+        return "result_by_income_page";
+    }
+
     //------------------------------ find Applicant by Occupation -----------------------------------
 
     @GetMapping("/findByOccupationResult")
