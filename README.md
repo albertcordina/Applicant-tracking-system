@@ -191,7 +191,10 @@ The project Applicant tracking system consists of the 17 classes, 2 interfaces:
                                     calls findAllApplicants method of the ApplicantService class and get to the manage_applicants.html page
 
                              find applicant by AGE method:
-                 findByAgeResult – calls findApplicantByAge method of the ApplicantService class and gets to the result_by_age_page.html page
+                 findByAgeResult – calls findApplicantByAge and findApplicantsByAgeRange method of the ApplicantService class and gets to the result_by_age_page.html page
+
+                             find applicant by Income method:
+                 findByAgeResult – calls findApplicantsByIncome and findApplicantsByIncomeRange method of the ApplicantService class and gets to the result_by_income_page.html page
 
                              find applicant by Occupation method:
                  findByOccupationResult – calls findApplicantByOccupation method of the ApplicantService class
@@ -334,14 +337,17 @@ the package ‘service’ has 2 classes:
          Calls the ApplicantRepository and AuthorityRepository interfaces.
          Contains the methods:
   
-                          saveApplicant –              calls the save method of the ApplicantRepository interface.
-                          findAllApplicants –          calls the findAll method of the Applicant Repository interface.
-                          findApplicantByUsername –    calls the findByUsername method of the ApplicantRepository interface.
-                          findApplicantByAge –         calls the findByAge method of the ApplicantRepository interface.
-                          findApplicantsByOccupation – calls the findByOccupation method of the ApplicantRepository interface.
-                          findApplicantByDeletion –    calls the findByDeletionIsTrue method of the ApplicantRepository interface.
-                          findEmailByUsername -        calls the findEmailByUsername of the ApplicantRepository interface.
-                          deleteApplicantByUsername –  calls the deleteByUsername method of the AuthorityRepository interface and
+                          saveApplicant –               calls the save method of the ApplicantRepository interface.
+                          findAllApplicants –           calls the findAll method of the Applicant Repository interface.
+                          findApplicantByUsername –     calls the findByUsername method of the ApplicantRepository interface.
+                          findApplicantByAge –          calls the findByAge method of the ApplicantRepository interface.
+                          findApplicantsByAgeRange -    calls the findByAgeBetween method of the ApplicantRepository interface.
+                          findApplicantByIncome –       calls the findByIncome method of the ApplicantRepository interface.
+                          findApplicantsByIncomeRange - calls the findByIncomeBetween method of the ApplicantRepository interface.
+                          findApplicantsByOccupation –  calls the findByOccupation method of the ApplicantRepository interface.
+                          findApplicantByDeletion –     calls the findByDeletionIsTrue method of the ApplicantRepository interface.
+                          findEmailByUsername -         calls the findEmailByUsername of the ApplicantRepository interface.
+                          deleteApplicantByUsername –   calls the deleteByUsername method of the AuthorityRepository interface and
                                                         then the deleteByUsername method of the ApplicantRepository interface.
 
        getTotalNumberOfApplicants – calls the findAll method of the ApplicantRepository and returns the number of elements in the list of the Applicants.
@@ -379,7 +385,7 @@ the package 'web' has 2 classes:
 
        Contains the following methods:
           
-        existsByUsername, findByUsername, deleteByUsername, findByAge, findByOccupation and findByDeletionIsTrue
+        existsByUsername, findByUsername, deleteByUsername, findByAge, findByAgeBetween, findByIncome, findByIncomeBetween, findByOccupation and findByDeletionIsTrue
         findEmailByUsername - the method with @Query annotation, which gets the email according to the username of the applicant
 
 
