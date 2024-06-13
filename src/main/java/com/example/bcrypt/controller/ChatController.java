@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,9 +30,9 @@ public class ChatController {
 
         // If the applicant is found, adds the applicant's name to the model for the HTML account page
         if (applicants != null) {
-            model.addAttribute("name", applicants.getName());  // Add applicant's name to the model for the HTML account page
+            model.addAttribute("name", applicants.getName());  // Add applicant's name to the model for the HTML account page.
         }
-        // Returns the view name "chat", which corresponds to a chat page
+        // Returns the view name "chat", which corresponds to a chat page.
         return "chat";
     }
 
