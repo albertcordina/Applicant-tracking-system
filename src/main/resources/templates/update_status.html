@@ -24,6 +24,21 @@
         legend {
             margin-right: 20px;
         }
+        button[type="submit"],
+        input[type="button"] {
+            background-color: white;
+            border: 1px solid darkgreen;
+            color: darkgreen;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        button[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: darkgreen;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -55,7 +70,9 @@
     </form>
 
     <div class="text-center mt-3">
+        <a href="/applicantsDeletionRequest" class="btn btn-secondary">Back to the Applicant's Account Removal Request</a>
         <a href="/manageApplicants" class="btn btn-secondary">Back to the Applicant's list</a>
+
     </div>
 </div>
 </body>
