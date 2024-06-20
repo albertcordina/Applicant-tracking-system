@@ -5,7 +5,7 @@ Purpose: The primary purpose of this project is to create a platform where indiv
 
 Goals:
 
-         To provide a user-friendly interface for users to register and submit their financial government support applications.
+         To provide a user-friendly interface for applicants to register and submit their financial government support applications.
          To ensure secure handling of personal information such as age, employment status, and other relevant details.
          To enable administrators to filter and review applications based on various criteria to streamline the process and make informed decisions.
          To automate part of the process of application review to increase efficiency and reduce manual errors.
