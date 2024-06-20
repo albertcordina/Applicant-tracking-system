@@ -1,7 +1,11 @@
                                                    Project Overview
 
-Purpose: The primary purpose of this project is to create a platform where individuals can register and apply for financial government support (Government Financial Aid Program). 
-         It aims to streamline the process of collecting applicant's information, submitting applications, and enabling administrators to efficiently manage and respond to these applications.
+Purpose: 
+
+        The primary purpose of this project is to create a platform where individuals can register and apply 
+         for financial government support (Government Financial Aid Program). 
+        It aims to streamline the process of collecting applicant's information, submitting applications, 
+         and enabling administrators to efficiently manage and respond to these applications.
 
 Goals:
 
