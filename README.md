@@ -12,9 +12,9 @@ Goals:
          
 Intended Audience:
 
-         Users: Individuals seeking financial government support who are comfortable with 
-                using online platforms to submit personal information and applications.
-         Administrators: Personnel who will oversee the application process, review user 
+         Applicants:     Individuals (over 18 years of age) seeking financial government support who are comfortable with 
+                         using online platforms to submit personal information and applications.
+         Administrators: Personnel who will oversee the application process, review applicant's 
                          information, and make decisions on the disbursement of aid.
 
 This system is designed to be scalable and secure, ensuring that it can handle a growing number of users and sensitive data with integrity. 
@@ -22,10 +22,6 @@ The project will also focus on compliance with data protection regulations to ma
 
 
                                                    Installation Guide
-
-<<Detail the steps required to set up and run the application.
-Include any prerequisites, such as software dependencies or database configurations.
-Provide clear instructions for installation on different operating systems if applicable.>>
 
 This guide will walk you through the steps to install and run the Java Spring Boot application for managing financial aid applications.
 
@@ -74,7 +70,7 @@ This guide will help you complete the registration form on our website. Follow t
 1. Access the Registration page
 
           A- Navigate to our website’s homepage.
-          B- Click on the Register button usually located on the top right of the page.
+          B- Click on the Register button (located on the top right of the page).
    
 2. Fill in Your Personal Information
    
@@ -85,10 +81,6 @@ This guide will help you complete the registration form on our website. Follow t
           A- Once all fields are filled in the verified, click submit button.
           B- If there are any errors they will be highlighted. Please correct them and try submitting again.
 
-   Contact Support
- 
-         If you encounter any issues or need further assistance, please contact our support 
-         team through the “Contact us” page or via email at abcsupport@example.com.
 
 <> 
 
