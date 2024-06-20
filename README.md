@@ -69,7 +69,7 @@ Installation Steps:
 
 Overview:
 
-This guide will help you complete the registration form on our website. Follow the steps below to create your account successfully:
+  This guide will help you complete the registration form on our website. Follow the steps below to create your account successfully:
 
 1. Access the Registration page
 
