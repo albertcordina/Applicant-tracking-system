@@ -94,7 +94,7 @@ Overview:
 Database Schema Overview:
 
    Our database schema is designed to manage information about applicants and the authorities associated with them.
-      Here’s a more detailed description of our database schema featuring the “APPLICANT”
+   Here’s a detailed description of our database schema featuring the “APPLICANT”
              and the “AUTHORITIES” tables and their relationship to each other.
 
 Applicant Table
