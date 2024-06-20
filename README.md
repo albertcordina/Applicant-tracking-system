@@ -12,8 +12,8 @@ Goals:
          
 Intended Audience:
 
-         Applicants:     Individuals (over 18 years of age) seeking financial government support who are comfortable with 
-                         using online platforms to submit personal information and applications.
+         Applicants:     Individuals (over 18 years of age) seeking financial government support who are comfortable 
+                         with using online platforms to submit personal information and applications.
          Administrators: Personnel who will oversee the application process, review applicant's 
                          information, and make decisions on the disbursement of aid.
 
