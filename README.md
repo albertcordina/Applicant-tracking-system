@@ -69,7 +69,8 @@ Installation Steps:
 
 Overview:
 
-  This guide will help you complete the registration form on our website. Follow the steps below to create your account successfully:
+  This guide will help you complete the registration form on our website. 
+       Follow the steps below to create your account successfully:
 
 1. Access the Registration page
 
@@ -132,7 +133,8 @@ Data Flow
 
     1- Applicant  Submits Application - An individual fills out an application form the submit button, creating a new entry in the applicant table.
     2- Authority Assignment - The applicant is assigned to a specific authority, indicated by the setting the  “username” in both tables.
-    3- Application Review - The assigned review of the application. The status is updated in the Applicant table to reflect the progress (e.g. Pending, Approved, Rejected).
+    3- Application Review - The assigned review of the application. The status is updated 
+        in the Applicant table to reflect the progress (e.g. Pending, Approved, Rejected).
 
 This schema provides a foundational structure for managing applicants and the authorities responsible for processing their applications.
 
