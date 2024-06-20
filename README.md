@@ -101,7 +101,8 @@ This database schema consists of two primary tables: Applicant and Authorities. 
 Applicant Table
 Table Name : APPLICANT
 
-The applicant table stores personal and applicant related details about individuals applying in our certain services. Each record represents a single applicant.
+     The applicant table stores personal and applicant related details about individuals 
+        applying in our certain services. Each record represents a single applicant.
 
 Columns:
 
@@ -120,8 +121,8 @@ Columns:
 Authorities Table
 Table Name: AUTHORITIES
 
-The authorities table contains information about the authorities responsible for handling the application.  
-Each record in the table represents an individual authority or an authoritative body.
+    The authorities table contains information about the authorities responsible for handling the application.  
+        Each record in the table represents an individual authority or an authoritative body.
 
 Columns:
 
